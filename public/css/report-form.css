@@ -1,0 +1,148 @@
+*,*::before,*::after{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: Mulish;
+    outline: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    /* scroll-snap-type: y mandatory; */
+}
+
+
+
+
+
+
+
+/* chatbot styles */
+#cf-context{
+                        width: 100vw;
+                        height:88vh;
+                        position:absolute;
+                        top:88px;
+                     
+                        overflow-y: hidden;
+                        /* padding:0 32px 0 32px; */
+                    }
+                    
+                    #cf-context .conversational-form {
+                        background: rgb(50, 53, 122);
+                        width: 100%;
+                    } 
+                    #cf-context .conversational-form cf-input{
+                       background: none;
+                      
+                    } 
+                    #cf-context .conversational-form cf-input.input{
+                        
+                       border:7px solid white;
+                     }
+                     /* #cf-context .conversational-form cf-input.input text{
+                         color:black;
+                      }  */
+                    #cf-context .conversational-form cf-input-button{
+                        background: #31326F;
+                        border:3px solid white;
+                     } 
+                     /* #cf-context .conversational-form cf-chat-response.user{
+                        width: 100px;
+                    
+                     } */
+                    
+                     #cf-context .conversational-form cf-chat-response.robot text{
+                       font-size:1.1rem;
+                      
+                     }
+.volunteer-form{
+    padding:120px 32px 126px 32px;
+   height: auto;
+   width: 100%;
+   display:flex;
+   align-items: center;
+   flex-direction: column;
+  
+}
+#report-case{
+    position:absolute;
+    top:0px;
+    background: rgb(13, 15, 119);
+ 
+}
+.report-header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    padding: 30px;
+    height:88px;
+}
+.report-header h1{
+    
+font-family: Mulish;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 100%;
+letter-spacing: -0.015em;
+color: #FFFFFF;
+
+}
+
+#report-form{
+    
+    padding:0px;
+   background: #31326F;
+   height: auto;
+   width: 100%;
+   display:flex;
+   align-items: center;
+   flex-direction: column;
+    overflow-y:hidden;
+}
+#v-form,#report-form{ 
+}
+#v-form { 
+    padding:0 32px 0 32px;
+}
+#v-form{
+    display:flex;
+    flex-direction: column;
+}
+#v-form h4{
+font-weight:600;
+font-size: 24px;
+line-height: 24px;
+width: auto;
+letter-spacing: -0.015em;
+color: #31326F;
+}
+#v-form h6{
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 150%;
+    /* or 24px */
+    width:300px;
+    letter-spacing: -0.015em;
+    margin-bottom: 35px;
+    /* Shuush_Purple */
+    margin-top:16px;
+    color: #31326F;
+    opacity: 0.5;
+}
+#v-form input,select{
+   height: 25px;
+   width: 100%;
+   font-size:1rem;
+   padding:0 7px;
+   outline-color: none;
+   margin-bottom: 10px;
+   background-color: #FFFFFF;
+   border: none;
+}
+.about{
+   width:330px;
+   height:140px;
+   padding:10px;
+   font-size:1.2rem;
+}
