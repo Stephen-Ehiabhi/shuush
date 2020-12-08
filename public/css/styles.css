@@ -664,6 +664,7 @@ opacity: 0.4;
         right:32px;
     }
     nav{
+        height:110px;
     padding: 0 100px 0 100px;
     }
     ul{
@@ -715,8 +716,11 @@ opacity: 0.4;
        
     }
     .section-one-content{
-        padding:240px 100px 210px 100px;
+        padding:60px 100px 0 100px;
        
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
     }
     .top-header{
         font-weight: 300;
@@ -759,7 +763,7 @@ opacity: 0.4;
         justify-content: space-between;
         height:210px;
         width:auto;
-        align-content: center;
+        justify-content: center;
         flex-direction: column;
         position: fixed;
         align-items: flex-end;
@@ -944,7 +948,11 @@ opacity: 0.4;
         
     }
     .image-icon-three{
-        display:none;
+        /* display:none; */
+    }
+    .volunteer-form{
+        background: #ffdada;
+        width: 100%;
     }
     .section-three, .section-four{
     background: #A8DDA8;
@@ -1020,8 +1028,8 @@ text-align: left;
         height:650.01px;
     width: 450px;
     position: absolute;
-    top:3300px;
-    right:270px;
+    
+    left:0;
     
     }
     /* .p,label{
