@@ -41,6 +41,10 @@ const reportedcasesSchema = new mongoose.Schema({
     email: {
         type: String
     },
+    date:{
+        type: String
+
+    } ,
     case_status:{
         type: String,
         default: "pending",

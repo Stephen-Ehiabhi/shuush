@@ -1,4 +1,4 @@
-   new cf.ConversationalForm({
+ var c_f =  new cf.ConversationalForm({
 formEl: document.getElementById("report-form"),
             context: document.getElementById("cf-context"),
             userInterfaceOptions:{
@@ -11,13 +11,16 @@ formEl: document.getElementById("report-form"),
                                     showThinking: false,
                                     showThumb: false
                                 }
+                               
                             },
+                            showProgressBar: true,
                             theme: "purple",
   submitCallback: function() {
-                document.getElementById("report-form").submit()
-            conversationalForm.addRobotChatResponse("Alright, you are done."); 
+                  document.getElementById("report-form").submit()
+           
            }
        });
  
+window.conversationalForm.addRobotChatResponse("Alright, you are done."); 
 
    

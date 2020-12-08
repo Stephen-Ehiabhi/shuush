@@ -10,75 +10,155 @@
            <div class="container">
  <!-- report a case form -->
  <div id="report-case" class="report-case">
-                        <datalist id="school">
-                             <option value="Unilag">
-                             <option value="University of Ibadan">
-                             <option value="Chrome">
-                             <option value="Opera">
-                             <option value="Safari">
-                           </datalist>
-                           <datalist id="gender">
-                             <option value="Male">
-                             <option value="Female">
-                     
-                           </datalist>
-                     
-                           <datalist id="reported_for">
-                             <option value="Self">
-                             <option value="Someone else">
-                           </datalist>
-                           <datalist id="abusers_occupation">
-                             <option value="Teaching Staff">
-                             <option value="Non Teaching Staff">
-                           </datalist>
-                           <form action="/report-case" method="POST" id="report-form" cf-form...>
-                             <div class="report-header">
-                               <h1>Shuush  <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <circle cx="4.97235" cy="4.99994" r="4.02777" fill="#A8DDA8"/>
-                                 </svg>
-                               </h1>
-                               <a href="/">
-                                                <svg class="cancel-report" width="22" height="22" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path d="M2.64258 1.61255L24.8129 25.3906" stroke="white" stroke-width="2"/>
-                                 <path d="M2.23389 24.9958L25.2221 2.00764" stroke="white" stroke-width="2"/>
-                                 </svg> 
-                        </a>
-                                          
-                             </div>
-                     <input type="text" name="reported_for" list="reported_for"
-                               cf-questions="Hello! Are you reporting for Yourself or for a Friend?" required />
-                             <input type="text" name="the_school_case_happened" list="school"
-                               cf-questions="What's the name of the School it took place at?" required />
-                             <input type="text" name="anonymous_name"
-                               cf-questions="Give yourself an anonymous name, completely unrelated to you" required />
-                             <input type="text" name="gender_of_the_victim" list="gender" cf-questions="Are you male or female?" required />
-                             <input type="text" name="age_of_the_victim" cf-questions="How old are you please?" required />
-                     
-                             <input type="text" name="abusers_name" cf-questions="Do you know the Fullname of the Abuser?" required />
-                             <input type="text" name="gender_of_the_abuser" list="gender" cf-questions="What's the Abuser's Gender?"
-                               required />
-                             <input type="text" name="abusers_occupation" list="abusers_occupation"
-                               cf-questions="What role does the Abuser have in the school?" required />
-                             <input type="text" name="abusers_department" cf-questions="If he/she is a Teaching staff, what department?"
-                               required />
-                             <input type="text" name="date_victim_was_assaulted"
-                               cf-questions="Do you still remember when it happened? The Date? Please send it if you do" required />
-                             <textarea name="victims_story" rows="3" cf-questions="Can you describe what happened in a few sentences?"
-                               required></textarea>
-                     
-                             <input type="file" name="victims_case_evidence" cf-questions="Want to share Pictures?"/>
-                     
-                             <input type="email" name="email" cf-questions="If you'd like to speak to a counsellor, please leave your email"
-                               required />
-                     
-                             <button class="submit" type="submit">Report</button>
-                           </form>
-                           <div id="cf-context" role="cf-context" cf-context></div>
-                     
-                         </div>
-             
-           </div>    
-                    
+  <datalist id="school">
+    <option value="Unilag">
+    <option value="University of Ibadan">
+    <option value="Chrome">
+    <option value="Opera">
+    <option value="Safari">
+  </datalist>
+  <datalist id="gender">
+    <option value="Male">
+    <option value="Female">
+
+  </datalist>
+
+  <datalist id="reported_for">
+    <option value="Self">
+    <option value="Someone else">
+  </datalist>
+  <datalist id="abusers_occupation">
+    <option value="Teaching Staff">
+    <option value="Non Teaching Staff">
+  </datalist>
+  <form action="/report-case" method="POST" id="report-form" cf-form...>
+    <div class="report-header">
+      <h1>Shuush  <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="4.97235" cy="4.99994" r="4.02777" fill="#A8DDA8"/>
+        </svg>
+      </h1>
+      <a href="/">
+                       <svg class="cancel-report" width="22" height="22" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2.64258 1.61255L24.8129 25.3906" stroke="white" stroke-width="2"/>
+        <path d="M2.23389 24.9958L25.2221 2.00764" stroke="white" stroke-width="2"/>
+        </svg> 
+</a>
+                 
+    </div>
+    <datalist name="school" id="school">
+      <option value="University of Lagos">
+      <option value="University of Ibadan">
+      <option value="University of Ilorin">
+      <option value="University of Abeokuta">
+    </datalist>
+    <datalist id="gender">
+      <option value="Male">
+      <option value="Female">
+
+    </datalist>
+
+    <datalist id="reported_for">
+      <option value="For Myself">
+      <option value="For Someone Else">
+    </datalist>
+    <datalist id="abusers_occupation">
+      <option value="Teaching Staff">
+      <option value="Non Teaching Staff">
+    </datalist>
+    <form action="/report-case" method="POST" id="report-form" cf-form...>
+      <div class="report-header">
+        <h1>Shuush  <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="4.97235" cy="4.99994" r="4.02777" fill="#A8DDA8"/>
+          </svg>
+        </h1>
+        <a href="/">
+                         <svg class="cancel-report" width="22" height="22" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2.64258 1.61255L24.8129 25.3906" stroke="white" stroke-width="2"/>
+          <path d="M2.23389 24.9958L25.2221 2.00764" stroke="white" stroke-width="2"/>
+          </svg> 
+ </a>
+                   
+      </div>
+
+      <!-- robot text -->
+      <cf-robot-message cf-questions="Hi, Welcome to Shuush ❤. We are dedicated to helping you get all the support you need."></cf-robot-message>
+
+      <input type="text" name="anonymous_name"
+      cf-questions="To get started, please choose an anonymous name" required />
+<!-- robot text -->
+<cf-robot-message cf-questions="Nice to meet you {anonymous_name}!😊"></cf-robot-message>
+      <input type="text" name="reported_for" list="reported_for"
+        cf-questions="So {anonymous_name}, are you reporting this for yourself or on behalf of someone else?" required />
+      <input type="text" name="the_school_case_happened" list="school"
+        cf-questions="What's the name of the School it took place at?" required />
+           <input type="text" name="gender_of_the_victim" list="gender" cf-questions="Are you male or female?" required />
+      <input type="text" name="age_of_the_victim" cf-questions="How old are you please? if you're reporting for someone else write the persons age" required />
+      <input type="text" name="abusers_name" cf-questions="Whats the abusers name?" required />
+      <input type="text" name="gender_of_the_abuser" list="gender" cf-questions="What's the Abuser's Gender?"
+        required />
+      <input type="text" name="abusers_occupation" list="abusers_occupation"
+        cf-questions="What role does the Abuser have in the school?" required />
+      <input type="text" name="abusers_department" cf-questions="If he/she is a Teaching staff, what department?"
+        required />
+      <input type="text" name="date_victim_was_assaulted"
+        cf-questions="Do you still remember when it happened? The Date? Please send it if you do" required />
+      <textarea name="victims_story" rows="3" cf-questions="Can you describe what happened in a few sentences?"
+        required></textarea>
+
+      <input type="file" name="victims_case_evidence" cf-questions="Can you provide any Evidence?"/>
+
+      <input type="email" name="email" cf-questions="If you'd like to speak to a counsellor, please leave your email"
+        required />
+ <!-- robot text -->
+ <cf-robot-message cf-questions="Alright. Your report has been submitted we will get back to you shortly"></cf-robot-message>
+
+      <button class="submit" type="submit">Report</button>
+    </form>
+    <div id="cf-context" role="cf-context" cf-context></div>
+
+  </div>
+
+</div>    
+
+</body>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/space10-community/conversational-form@1.0.1/dist/conversational-form.min.js" crossorigin></script>
+
+<script src="../js/index.js"></script>
+</html>
+<input type="text" name="reported_for" list="reported_for"
+      cf-questions="Hello! Are you reporting for Yourself or for a Friend?" required />
+    <input type="text" name="the_school_case_happened" list="school"
+      cf-questions="What's the name of the School it took place at?" required />
+    <input type="text" name="anonymous_name"
+      cf-questions="Give yourself an anonymous name, completely unrelated to you" required />
+    <input type="text" name="gender_of_the_victim" list="gender" cf-questions="Are you male or female?" required />
+    <input type="text" name="age_of_the_victim" cf-questions="How old are you please?" required />
+
+    <input type="text" name="abusers_name" cf-questions="Do you know the Fullname of the Abuser?" required />
+    <input type="text" name="gender_of_the_abuser" list="gender" cf-questions="What's the Abuser's Gender?"
+      required />
+    <input type="text" name="abusers_occupation" list="abusers_occupation"
+      cf-questions="What role does the Abuser have in the school?" required />
+    <input type="text" name="abusers_department" cf-questions="If he/she is a Teaching staff, what department?"
+      required />
+    <input type="text" name="date_victim_was_assaulted"
+      cf-questions="Do you still remember when it happened? The Date? Please send it if you do" required />
+    <textarea name="victims_story" rows="3" cf-questions="Can you describe what happened in a few sentences?"
+      required></textarea>
+
+    <input type="file" name="victims_case_evidence" cf-questions="Want to share Pictures?"/>
+
+    <input type="email" name="email" cf-questions="If you'd like to speak to a counsellor, please leave your email"
+      required />
+
+    <button class="submit" type="submit">Report</button>
+  </form>
+  <div id="cf-context" role="cf-context" cf-context></div>
+
+</div>
+
+</div>    
+
 </body>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/space10-community/conversational-form@1.0.1/dist/conversational-form.min.js" crossorigin></script>
 

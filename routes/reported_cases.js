@@ -2,6 +2,9 @@ const express = require('express')
 const router = require("express").Router();
 const mongoose = require("mongoose")
 const path = require("path");
+var moment = require('moment'); // require
+
+
 
 //upload the file medias to the DB and store it
  //MIDDLEWARES
@@ -28,7 +31,7 @@ router.post('/', async (req,res)=>{
                     abusers_department,
                     date_victim_was_assaulted,
                     victims_story,
-                    email
+                    email,date
                   } = req.body;
 
      //create a new report
@@ -48,6 +51,7 @@ router.post('/', async (req,res)=>{
                   //   victims_case_evidence,
                     email,  
                      case_status: "pending",
+                     date: moment().format() 
        })
 
 

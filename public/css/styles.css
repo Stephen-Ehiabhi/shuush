@@ -27,7 +27,7 @@ nav{
     align-items: center;
     padding: 0 32px;
     background:none;
-    position: sticky;
+    position: fixed;
     top: 0px;
 }
 
@@ -291,7 +291,7 @@ textarea:hover{
 .section-one-content{
     background: #DBF6E9;
     height: 100vh;
-    padding:46px 32px 0 32px;
+    padding:100px 32px 0 32px;
 }
 .top-header{
 font-style: normal;
@@ -552,7 +552,22 @@ opacity: 0.4;
         font-size: 50px;
     }
     .section-one-content{
-        padding-top: 17px;
+       
+    }
+    .section-two,.section-three{
+        /* padding-top: 10px; */
+        padding:2px 32px;
+    }
+    .section-two-container h1,.section-three div h1,.section-four div h1, .section-five div h1{
+        font-size: 40px;
+       
+    }
+    .section-two-container p,.section-three div p,.section-four div p, .section-five div p{
+       line-height: 140%;
+       font-size: 15px;
+    }
+    .section-two-info{
+        margin-top:15px ;
     }
     .info{
         font-size: 15px;
