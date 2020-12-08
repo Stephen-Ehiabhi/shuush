@@ -50,7 +50,7 @@ const isAdmin  =  (req, res, next) => {
        if (decodedToken.role === 'admin') {
             next();
        } else {
-            res.redirect('/admin/dashboard');
+            res.redirect('/admin/login');
        }
        
      }

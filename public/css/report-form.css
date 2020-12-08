@@ -11,49 +11,50 @@
 
 
 
-
+body{
+    background-color: #31326F;
+}
 
 
 
 /* chatbot styles */
 #cf-context{
-                        width: 100vw;
-                        height:88vh;
-                        position:absolute;
-                        top:88px;
-                     
-                        overflow-y: hidden;
-                        /* padding:0 32px 0 32px; */
-                    }
-                    
-                    #cf-context .conversational-form {
-                        background: rgb(50, 53, 122);
-                        width: 100%;
-                    } 
-                    #cf-context .conversational-form cf-input{
-                       background: none;
-                      
-                    } 
-                    #cf-context .conversational-form cf-input.input{
-                        
-                       border:7px solid white;
-                     }
-                     /* #cf-context .conversational-form cf-input.input text{
-                         color:black;
-                      }  */
-                    #cf-context .conversational-form cf-input-button{
-                        background: #31326F;
-                        border:3px solid white;
-                     } 
-                     /* #cf-context .conversational-form cf-chat-response.user{
-                        width: 100px;
-                    
-                     } */
-                    
-                     #cf-context .conversational-form cf-chat-response.robot text{
-                       font-size:1.1rem;
-                      
-                     }
+    width: 100vw;
+    height:82vh;
+    position:absolute;
+    top:88px;
+ 
+    overflow-y: hidden;
+    /* padding:0 32px 0 32px; */
+}
+
+#cf-context .conversational-form {
+    /* background: rgb(50, 53, 122); */
+    width: 100%;
+} 
+#cf-context .conversational-form cf-input{
+   background: none;
+  
+} 
+#cf-context .conversational-form cf-input.input{
+    
+   border:7px solid white;
+ }
+ /* #cf-context .conversational-form cf-input.input text{
+     color:black;
+  }  */
+#cf-context .conversational-form cf-input-button{
+    background: #31326F;
+    border:3px solid white;
+ } 
+ #cf-context .conversational-form cf-chat-button {
+    background-color: #FFFFFF;
+ }
+
+ #cf-context .conversational-form cf-chat-response.robot text{
+   font-size:1.1rem;
+  
+ }
 .volunteer-form{
     padding:120px 32px 126px 32px;
    height: auto;
@@ -145,4 +146,57 @@ color: #31326F;
    height:140px;
    padding:10px;
    font-size:1.2rem;
+}
+
+
+
+
+
+
+/* Tablet view */
+@media (width:768px) and (height:1024px){}
+
+
+
+
+/* Computer view */
+@media (min-width:1024px){
+body{
+    background-color: rgb(69, 71, 163);
+}
+/* chatbot */
+#report-case{
+    width: 450px;
+    margin: auto 40%;  
+    height:60px;
+    background:none;
+}
+#report-form{
+    height:80px;
+    position:absolute;
+    top:6rem;
+}
+
+#cf-context{
+    width: 100%;
+    height:550px;
+    position:absolute;
+    top:11rem;
+    right:0; 
+    overflow-y: hidden;
+    padding:0 32px 0 32px;
+}
+.report-header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 450px;
+    padding: 30px;
+    height:88px;
+}
+
+
+
+
+
 }

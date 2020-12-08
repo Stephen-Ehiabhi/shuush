@@ -12,6 +12,7 @@ formEl: document.getElementById("report-form"),
                                     showThumb: false
                                 }
                             },
+                            theme: "purple",
   submitCallback: function() {
                 document.getElementById("report-form").submit()
             conversationalForm.addRobotChatResponse("Alright, you are done."); 
