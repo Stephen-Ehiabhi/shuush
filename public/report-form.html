@@ -101,41 +101,64 @@
         cf-questions="What's the name of the School the incident happened??" required />
            <input type="text" name="gender_of_the_victim" list="gender" cf-questions="What's your gender? if you're reporting for someone else, is the victim Male of female?" required />
       <input type="text" name="age_of_the_victim" cf-questions="How old are you please? if you're reporting for someone else write the persons age" required />
-      <input type="text" name="abusers_name" cf-questions="What's the abusers Fullname?" required />
+      
+      <!-- conditional for abusers name -->
+<fieldset  cf-questions="Do you know the abusers name? It's alright if you don't.">
+  <label for="abusers-name-yes">Yes,i do.
+                <input type="radio" name="cfc-abusers-name" id="abusers-name-yes" value="yes">
+            </label>
+
+  <label for="abusers-name-no">No i don't.
+                <input type="radio" name="cfc-abusers-name" id="abusers-name-no" value="no">
+            </label>
+</fieldset>
+
+
+      <input type="text" name="abusers_name" cf-questions="please type in the abusers Fullname." cf-conditional-cfc-abusers-name="yes"/>
+     
       <input type="text" name="gender_of_the_abuser" list="gender" cf-questions="What's the Abuser's Gender?"
-        required />
+      cf-conditional-cfc-abusers-name="no"/>
+
+      
       <input type="text" name="abusers_occupation" list="abusers_occupation"
         cf-questions="What role does the Abuser have in the school?" required />
-      <input type="text" name="abusers_department" cf-questions="If he/she is a Teaching staff, what department?"
+      
+        <input type="text" name="abusers_faculty" cf-questions="What Faculty is the abuser in?"
         required />
-      <input type="text" name="date_victim_was_assaulted"
+
+        <input type="text" name="abusers_department" cf-questions="If he/she is a Teaching staff, what department?"
+        required />
+     
+        <input type="text" name="date_victim_was_assaulted"
         cf-questions="Do you still remember when it happened? The Date? Please type it if you do." required />
-      <textarea name="victims_story" rows="3" cf-questions="Can you describe what happened in a few sentences?"
+      
+        <textarea name="victims_story" rows="3" cf-questions="Can you describe what happened in a few sentences?"
         required></textarea>
 
+        <!-- conditional for submitting the evidence -->
         <fieldset cf-questions="Do you have any media evidence you can send? it's perfectly fine if you don't.">
           <label for="intro-yes">Yes i do.
-                        <input type="radio" name="cfc-intro" id="intro-yes" value="yes">
-                    </label>
+                <input type="radio" name="cfc-intro" id="intro-yes" value="yes">
+          </label>
       
           <label for="intro-no">No i don't.
-                        <input type="radio" name="cfc-intro" id="intro-no" value="no">
-                    </label>
+                <input type="radio" name="cfc-intro" id="intro-no" value="no">
+          </label>
         </fieldset>
 
       <input type="file" name="victims_case_evidence" cf-questions="Please attach the evidence in the chat." cf-conditional-cfc-intro="yes"/>
       
 
-<!-- conditional -->
+<!-- conditional for counsellor connection -->
 <fieldset  cf-questions="Would you like to be connected to a counsellor to help you through this? This would be strictly confidential."  cf-conditional-cfc-intro="no">
           <label for="intro-counsellor-yes">Yes, i'd love to.
-                        <input type="radio" name="cfc-intro-coun" id="intro-counsellor-yes" value="yes">
-                    </label>
+                <input type="radio" name="cfc-intro-coun" id="intro-counsellor-yes" value="yes">
+          </label>
       
           <label for="intro-counsellor-no">No Thanks..
-                        <input type="radio" name="cfc-intro-coun" id="intro-counsellor-no" value="no">
-                    </label>
-        </fieldset>
+                 <input type="radio" name="cfc-intro-coun" id="intro-counsellor-no" value="no">
+          </label>
+</fieldset>
 
 
 
@@ -146,7 +169,8 @@
  <!-- robot text -->
  <cf-robot-message cf-conditional-cfc-intro-coun="no" cf-questions="Alright. Your report has been submitted we will get back to you shortly"></cf-robot-message>
 
-      <button class="submit" type="submit">Report</button>
+      <button class="submit" type="submit"></button>
+
     </form>
     <div id="cf-context" role="cf-context" cf-context></div>
 

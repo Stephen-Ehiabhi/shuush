@@ -21,6 +21,6 @@ formEl: document.getElementById("report-form"),
            }
        });
  
-window.conversationalForm.addRobotChatResponse("Alright, you are done."); 
+// window.conversationalForm.addRobotChatResponse("Alright, you are done."); 
 
    
