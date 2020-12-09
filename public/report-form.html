@@ -12,26 +12,19 @@
            <div class="container">
  <!-- report a case form -->
  <div id="report-case" class="report-case">
-  <datalist id="school">
-    <option value="Unilag">
-    <option value="University of Ibadan">
-    <option value="Chrome">
-    <option value="Opera">
-    <option value="Safari">
-  </datalist>
   <datalist id="gender">
     <option value="Male">
     <option value="Female">
-
   </datalist>
 
   <datalist id="reported_for">
-    <option value="Self">
-    <option value="Someone else">
+    <option value="For Myself">
+    <option value="For Someone else">
   </datalist>
   <datalist id="abusers_occupation">
     <option value="Teaching Staff">
     <option value="Non Teaching Staff">
+      <option value="Others">
   </datalist>
   <form action="/report-case" method="POST" id="report-form" cf-form...>
     <div class="report-header">
@@ -47,27 +40,7 @@
 </a>
                  
     </div>
-    <!-- <datalist name="school" id="school">
-      <option value="University of Lagos">
-      <option value="University of Ibadan">
-      <option value="University of Ilorin">
-      <option value="University of Abeokuta">
-    </datalist> -->
-    <datalist id="gender">
-      <option value="Male">
-      <option value="Female">
-
-    </datalist>
-
-    <datalist id="reported_for">
-      <option value="For Myself">
-      <option value="For Someone Else">
-    </datalist>
-    <datalist id="abusers_occupation">
-      <option value="Teaching Staff">
-      <option value="Non Teaching Staff">
-      <option value="Others">
-    </datalist>
+  
     <form action="/report-case" method="POST" id="report-form" cf-form...>
       <div class="report-header">
         <h1>Shuush  <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -99,7 +72,10 @@
         cf-questions="So {anonymous_name}, are you reporting this for yourself or on behalf of someone else?" required />
       <input type="text" name="the_school_case_happened"
         cf-questions="What's the name of the School the incident happened??" required />
-           <input type="text" name="gender_of_the_victim" list="gender" cf-questions="What's your gender? if you're reporting for someone else, is the victim Male of female?" required />
+         
+        
+        
+        <input type="text" name="gender_of_the_victim" list="gender" cf-questions="What's your gender? if you're reporting for someone else, is the victim Male of female?" required />
       <input type="text" name="age_of_the_victim" cf-questions="How old are you please? if you're reporting for someone else write the persons age" required />
       
       <!-- conditional for abusers name -->
@@ -129,11 +105,22 @@
         <input type="text" name="abusers_department" cf-questions="If he/she is a Teaching staff, what department?"
         required />
      
+ <!-- conditional for submitting the evidence -->
+ <fieldset cf-questions="Do you still remember when it happened? The Date?">
+  <label for="date-yes">Yes i do.
+        <input type="radio" name="cfc-date" id="date-yes" value="yes">
+  </label>
+
+  <label for="date-no">No i don't.
+        <input type="radio" name="cfc-date" id="date-no" value="no">
+  </label>
+</fieldset>
+
         <input type="text" name="date_victim_was_assaulted"
-        cf-questions="Do you still remember when it happened? The Date? Please type it if you do." required />
+        cf-questions="When was it then?" cf-conditional-cfc-date="yes"/>
       
         <textarea name="victims_story" rows="3" cf-questions="Can you describe what happened in a few sentences?"
-        required></textarea>
+        cf-conditional-cfc-date="no" required></textarea>
 
         <!-- conditional for submitting the evidence -->
         <fieldset cf-questions="Do you have any media evidence you can send? it's perfectly fine if you don't.">
