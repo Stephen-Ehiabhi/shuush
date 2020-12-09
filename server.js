@@ -10,7 +10,7 @@ require('dotenv').config({path: "./config/config.env"})
 
 const app = express();
 
-const APP_PORT = process.env.PORT || 3000
+const APP_PORT = process.env.PORT || 8888
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -41,5 +41,5 @@ const {isAdmin} = require("./middlewares/auth")
 //routes middleware
 app.use("/",singleRoutes)
 app.use("/volunteer",volunteerRoutes)
-app.use("/admin",isAdmin,adminRoutes)
+app.use("/admin",adminRoutes)
 app.use("/report-case",reported_cases)

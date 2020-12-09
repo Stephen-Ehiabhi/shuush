@@ -24,7 +24,7 @@ router.get("/login", (req, res) => {
 });
 
 //get routes to load the login page
-router.get("/register", (req, res) => {
+router.get("/register",isAdmin, (req, res) => {
   res.sendFile(path.join(__dirname, '../public', 'a-register.html'))
 });
 
@@ -49,7 +49,7 @@ router.get("/dashboard/reports",isAdmin,(req, res) => {
 });
 
 //get route to get a single admin
-router.get("/profile/:id", async (req, res) => {
+router.get("/profile/:id",isAdmin, async (req, res) => {
   try{
       const admin = await admin.findById(req.params.id);
       return res.status(200).send(admin);
@@ -84,7 +84,7 @@ router.get("/profile/:id", async (req, res) => {
 // profile_photo_upload.single('image')
 //registration route
 //@desc url /api/admin/register
-router.post("/register",async (req, res) => {
+router.post("/register",isAdmin,async (req, res) => {
 
    //validate the input
 const {lastname,firstname,profile_photo,email,password,password2 } = req.body;
@@ -152,7 +152,7 @@ try {
 
 
 
-router.get('/users', async (req,res)=> {
+router.get('/users', isAdmin,async (req,res)=> {
   try {
     //get all the admin in the db
     const admin = await Admin.find()
@@ -164,7 +164,7 @@ router.get('/users', async (req,res)=> {
  })
  
  //read a single case
- router.get('/profile/:id', async (req,res) => {
+ router.get('/profile/:id', isAdmin,async (req,res) => {
   try {
     //get all the admin in the db
     const admin = await Admin.findById({ _id: req.params.id })
@@ -175,7 +175,7 @@ router.get('/users', async (req,res)=> {
  
  })
  
- router.get('/count', async (req,res) => {
+ router.get('/count', isAdmin,async (req,res) => {
   try {
     //get all the reports in the db
     const getadminCount = await Admin.countDocuments()
@@ -203,7 +203,7 @@ router.get('/users', async (req,res)=> {
  //   })
  
    //delete a single case
- router.delete('/profile/:id', async (req,res) => {
+ router.delete('/profile/:id', isAdmin,async (req,res) => {
     try {
       //get all the admin in the db
       const admin = await admin.findByIdAndDelete({ _id: req.params.id})
