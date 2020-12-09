@@ -31,7 +31,7 @@ router.post('/', async (req,res)=>{
                     abusers_department,
                     date_victim_was_assaulted,
                     victims_story,
-                    email,date
+                    email,date_of_report
                   } = req.body;
 
      //create a new report
@@ -51,13 +51,13 @@ router.post('/', async (req,res)=>{
                   //   victims_case_evidence,
                     email,  
                      case_status: "pending",
-                     date: moment().format() 
+                     date_of_report: moment().format() 
        })
 
 
     try {
            const latestReport = await newReports.save()
-                        
+            res.redirect('/')    
     } catch (error) {
          res.status(404).send(`There was an error saving a new report ${error}`)                  
     }

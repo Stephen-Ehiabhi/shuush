@@ -41,7 +41,7 @@ const reportedcasesSchema = new mongoose.Schema({
     email: {
         type: String
     },
-    date:{
+    date_of_report:{
         type: String
 
     } ,

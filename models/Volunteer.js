@@ -3,15 +3,15 @@ const mongoose = require('mongoose');
 const volunteerSchema = new mongoose.Schema({
     firstname: {
         type: String,
-        required: true,
-        minlength: 6,
-        max: 70
+        required: true
+        // minlength: 6,
+        // max: 70
     }, 
     lastname: {
         type: String,
-        required: true,
-        minlength: 6,
-        max: 70
+        required: true
+        // minlength: 6,
+        // max: 70
     },
     date_of_birth:{
         type: String,

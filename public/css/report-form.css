@@ -53,7 +53,8 @@ body{
 
  #cf-context .conversational-form cf-chat-response.robot text{
    font-size:1.1rem;
-  
+  font-family: Mulish;
+  font-weight: 700;
  }
 .volunteer-form{
     padding:120px 32px 126px 32px;

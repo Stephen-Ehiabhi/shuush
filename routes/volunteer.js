@@ -90,14 +90,16 @@ const {firstname,lastname,date_of_birth,occupation,state_of_residence,volunteer_
 try{
 //saving a volunteer to DB
   const savedVolunteer = await newVolunteer.save();
-  res.status(200).send("successfully regisrered")
+  res.status(200).send("successfully regisered")
 }catch(err){
 //  const errors =  handleErrors(err)
  res.status(400).send(err)
+ console.log(err);
+ 
 }
 });
 
-
+/*
 //login route
 //@desc url /api/volunteer/register
 router.post("/login", async (req,res)=>{
@@ -129,6 +131,8 @@ try {
 }
 });
 
+
+*/
 
 
 router.get('/users', async (req,res)=> {

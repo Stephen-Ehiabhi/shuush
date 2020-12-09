@@ -21,7 +21,7 @@ app.use(cookie());
 app.use(cors());
 
 
-mongoose.connect(process.env.DBURI,{ useUnifiedTopology:true, useNewUrlParser:true, useCreateIndex:true },(error)=>{
+mongoose.connect(process.env.URI,{ useUnifiedTopology:true, useNewUrlParser:true, useCreateIndex:true },(error)=>{
     if(error) console.log(`There was an ${error} connecting shuush to the DB and server on port ${APP_PORT}`);
     else app.listen(APP_PORT,()=>{
         console.log(`shuush database and server connected on port ${APP_PORT}`)
