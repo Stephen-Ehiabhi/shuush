@@ -1021,13 +1021,13 @@ opacity: 0.4;
     }
     .section-five div h1{
         width:577.11px;
-        font-size: 120px;
+        font-size: 100px;
         color: #FFDADA;
     }
     .section-five div p{
         font-family: Mulish;
-        width:750px;
-font-size: 26px;
+        width:600px;
+font-size: 24px;
 font-style: normal;
 font-weight: normal;
 line-height: 45px;
@@ -1046,7 +1046,7 @@ text-align: left;
         height:650.01px;
     width: 450px;
     position: absolute;
-   top: 3700px;
+   top: 3300px;
     right:270px;
     /* margin:80px auto 10px auto;
      */
