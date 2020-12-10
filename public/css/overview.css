@@ -54,15 +54,15 @@
         /* identical to box height, or 16px */
          color: #31326F;
     }
-    .nav-div li:hover{
+    /* .nav-div li:hover{
         background-color: white;
         a{
             color: #31326F;
         };
         text-align: center;
         padding-top:10px;
-    }
-    .nav-div li:active{
+    } */
+    .nav-div li a:active{
         background-color: white;
         color: #31326F;
         text-align: center;
