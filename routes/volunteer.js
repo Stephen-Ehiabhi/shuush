@@ -68,13 +68,13 @@ router.get("/profile/:id", async (req, res) => {
 //registration route
 //@desc url /api/volunteer/register
 router.post("/register",async (req, res) => {
- console.log(req.body)
+ //console.log(req.body)
 //validate the input
 const {firstname,lastname,date_of_registration,date_of_birth,occupation,state_of_residence,volunteer_as,gender,about,phone_number,email} = req.body;
 
 //check if volunteer already exists
   const volunteer = await Volunteer.findOne({ email });
-  if(volunteer) return res.status(404).send("email already exists");
+  if(volunteer) return res.status(404).json({error: "email already exists"});
 
 //creating a volunteer
   const newVolunteer = new Volunteer({
@@ -93,11 +93,12 @@ const {firstname,lastname,date_of_registration,date_of_birth,occupation,state_of
 try{
 //saving a volunteer to DB
   const savedVolunteer = await newVolunteer.save();
-  res.status(200).send("Application sucessfully sent")
+  //console.log("successful");
+  res.status(200).json({success: "Application sucessfully sent"})
 }catch(err){
 //  const errors =  handleErrors(err)
- res.status(404).send(err)
- console.log(err);
+//console.log("error");
+ res.status(404).json({v_Error: err})
  
 }
 });

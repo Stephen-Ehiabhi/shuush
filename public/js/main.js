@@ -67,6 +67,7 @@ form.addEventListener("submit", async (e)=>{
   e.preventDefault()
 
   const errors = document.querySelector(".errors")
+  const success = document.querySelector(".success")
 
   const formData = {
        firstname: document.querySelector('#firstname').value,
@@ -77,10 +78,11 @@ form.addEventListener("submit", async (e)=>{
        occupation: document.querySelector('#occupation').value,
       state: document.querySelector('#state').value,
        volunteer_as: document.querySelector('#volunteer_as').value,
-       about: document.querySelector('#about').value
+       about: document.querySelector('#about').value,
+       gender: document.querySelector('#gender').value
   };
  
-console.log(formData);
+//console.log(formData);
 
 
 // form validation
@@ -107,13 +109,13 @@ console.log(formData);
 
   const fetchedPost = await newFormData.json();
 
-  console.log(fetchedPost)
+  //console.log(fetchedPost)
 //   throw the errors to the frontend
-  errors.value = fetchedPost._message
+  errors.textContent = fetchedPost.error
+  success.textContent = fetchedPost.success
 
  } catch (error) {
      console.log(error)
  }
-  
 })
 page()
