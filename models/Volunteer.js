@@ -3,15 +3,15 @@ const mongoose = require('mongoose');
 const volunteerSchema = new mongoose.Schema({
     firstname: {
         type: String,
-        required: true
-        // minlength: 6,
-        // max: 70
+        required: true,
+        min: 6,
+        max: 70
     }, 
     lastname: {
         type: String,
-        required: true
-        // minlength: 6,
-        // max: 70
+        required: true,
+        min: 6,
+        max: 70
     },
     date_of_birth:{
         type: String,
@@ -40,6 +40,10 @@ const volunteerSchema = new mongoose.Schema({
         unique: true,
         required:  true
     },
+    date_of_registration:{
+        type: String
+
+    } ,
     about: {
         type: String,
         required: true
@@ -47,7 +51,7 @@ const volunteerSchema = new mongoose.Schema({
     volunteer_as: {
         type: String,
         default: "lawyer",
-        enum: ["lawyer","counsellor","manager"]
+        enum: ["lawyer","counsellor","human_rights_activist"]
 }
 });
 

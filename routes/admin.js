@@ -3,6 +3,7 @@ const router = express.Router();;
 const jwt = require("jsonwebtoken");
 const path = require("path");
 const bcrypt = require('bcryptjs');
+const moment = require("moment")
 
 // //MIDDLEWARES
 router.use(express.static('../public/css'));
@@ -87,7 +88,7 @@ router.get("/profile/:id",isAdmin, async (req, res) => {
 router.post("/register",isAdmin,async (req, res) => {
 
    //validate the input
-const {lastname,firstname,profile_photo,email,password,password2 } = req.body;
+const {lastname,firstname,profile_photo,email,password,password2,id} = req.body;
 
 //check if admin already exists
   const admin = await Admin.findOne({ email });
@@ -100,17 +101,18 @@ const encryptedPassword = await bcrypt.hash(password, salt);
 
 //creating a admin
   const newadmin = new Admin({
+    id,
     firstname,
     lastname,
     email,
     password: encryptedPassword,
+    date_of_registration: moment().format(),
     role: "admin"
 });
 try{
 //saving a admin to DB
   const savedadmin = await newadmin.save();
-  console.log(savedadmin);
-  res.send("New user registered");
+  res.status(200).send("New user registered");
 }catch(err){
 //  const errors =  handleErrors(err)
  res.status(400).send(err)

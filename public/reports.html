@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/css/overview.css">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap" rel="stylesheet">
-        <title>Reports</title>
+        <meta name="viewport" content="width=device-width, initial-scale=10">
+        <link rel="stylesheet" href="/css/reports_management.css">
+        <link rel="preconnect" href="https://fontsgstatic.com">
+<link href="https://fontsgoogleapis.com/css2?family=Mulish:wght@200&display=swap" rel="stylesheet">
+        <title>Reports Management</title>
 </head>
 <body>
 <div class="container">
@@ -18,19 +18,19 @@
             <div class="nav-div">
                 <ul>
                     <li><a href="/admin/dashboard/overview">Overview</a></li>
-                        <li ><a href="/admin/dashboard">User Management</a></li>
-                        <li><a href="/admin/dashboard/volunteers">Volunteers</a></li>
-                        <li><a href="/admin/dashboard/reports">Reports</a></li>
-                        <li class="logout">Logout</li>
+                    <li ><a href="/admin/dashboard">User Management</a></li>
+                    <li><a href="/admin/dashboard/volunteers">Volunteers</a></li>
+                    <li><a href="/admin/dashboard/reports">Reports</a></li>
+                    <li class="logout"><a href="/">Logout</a></li>
                 </ul>
             </div>
         </div>
         <div class="main-div-two">
              <nav>
-              <h1 class="volunteers">Overview</h1>
+              <h1 class="volunteers">Reports Management</h1>
                 <div class="profile-div">
                     <div >
-                        <img class="profile-img" src="D:\gr3y shuush\316123-Cyberpunk-Sci-Fi-Fight-Digital-Art-4K.jpg" >
+                        <img class="profile-img" src="D:\gr3y shuush\316123-Cyberpunk-Sci-Fi-Fight-Digital-Art-4Kjpg" >
                     </div>
                     <div class="profile-info">
                         <h3 class="profile-name">steevgr3y</h3>
@@ -39,23 +39,35 @@
                 </div>
             
          </nav>
+         <div class="search-div">
+                 <div>
+                         <input type="search" class="search" name="search" Id="search" placeholder="Search Users"><svg class="search-btn" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://wwww3org/2000/svg">
+                            <g opacity="05">
+                            <path d="M113628 19877C157811 19877 193628 162952 193628 11877C193628 745867 157811 387695 113628 387695C694451 387695 336279 745867 336279 11877C336279 162952 694451 19877 113628 19877Z" stroke="#2E434E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M213628 21877L170128 17527" stroke="#2E434E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                         </svg></input>
+                   
+                 </div>
+                 <!-- <div>
+                       <a href="/admin/register"><button class="add_user">Add new user</button></a>
+                 </div>             -->
+         </div>
          <div class="data-div">
-         <div class="case-responded">
-             <h1>32</h1>
-             <p>Reports responded</p>
-         </div>
-         <div class="volunteer_signup">
-            <h1>32</h1>
-            <p>volunteer signup</p>
-         </div>
-         <div class="reports-unattended">
-            <h1>32</h1>
-            <p>Reports unattended</p>
-         </div>
-         <div class="reports-responded">
-             <h1>32</h1>
-             <p>Reports responded</p>
-         </div>
+             <table>
+                <tr>
+                 <td class="topic">No</td> 
+                 <td class="topic">Id</td>
+                 <td class="topic">Anonymous name</td>
+                 <td class="topic">School</td>
+                 <td class="topic">Email Address</td> 
+                 <td class="topic">Date</td>
+                 <td class="topic">Age</td>
+                 <td class="topic">Case Status</td>
+                </tr>
+
+            
+             </table>
          </div>
     </div>
 </body>

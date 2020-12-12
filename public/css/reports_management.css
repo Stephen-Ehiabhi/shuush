@@ -149,17 +149,17 @@ background: #31326F;
     .data-div{
        
        height: 800px;
-      
-       /* margin: 0 40px; */
+        overflow:auto;
+       margin: 0 40px;
         background-color: white;
         margin-top: 1.7rem;
     }
     table{
        
-         width: 100%;
+         width: 130%;
          height: auto;
          
-         /* overflow-y: scroll; */
+         overflow-y: scroll;
          border: 0.5px solid #c4c4c4;
         /* padding-top: 1.8rem; */
     }
@@ -167,7 +167,7 @@ background: #31326F;
         display: flex;
        height: 50px;
        /* width:100%; */
-       width:100%;
+       width:auto;
      
        padding:20px 4px 4px 0;
        flex-direction: row;
@@ -175,7 +175,7 @@ background: #31326F;
        border-bottom: 0.5px solid #c4c4c4;
     }
     td{
-       padding:0 55px 55px 0;
+       padding:0 40px 40px 0;
        font-family: Mulish;
        font-style: normal;
        font-weight: normal;

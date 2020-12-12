@@ -2,11 +2,12 @@ const table = document.querySelector("table")
 
 
 const createTableData = async () => {
-//fetch the user details route end-point
+  try {
+    //fetch the user details route end-point
 const users = await  fetch("/volunteer/users")
 const fetchedUsers = await users.json();
 
-console.log(fetchedUsers) 
+ 
 fetchedUsers.forEach(user => {
   const tr = document.createElement("tr")
   const td = document.createElement("td")
@@ -16,14 +17,20 @@ fetchedUsers.forEach(user => {
      <td class=Id">#2293553</td>
   <td>${user.firstname} ${user.lastname}</td>
   <td>${user.email}</td>
-  <td>${user.role}</td>
-  <td>7/18/17</td>
+  <td>${user.phone_number}</td>
+  <td>${user.volunteer_as}</td>
+  <td>${user.occupation}</td>
+  <td>${user.gender}</td>
+  <td>${user.date_of_registration}</td>
   
   `
 
-  table.appendChild(tr)                 
-});    
+  table.appendChild(tr) 
+})    
+  } catch (error) {
+    console.log(error);
+  }        
+}    
   
-}
 
 createTableData()

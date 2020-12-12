@@ -58,5 +58,28 @@ const isAdmin  =  (req, res, next) => {
 }
 
 
+// is Super admin
+
+//to check user roles
+// const isSuperAdmin  =  (req, res, next) => {
+//      //check for the token in the headers
+//      const token = req.cookies.jwt;
+//      if(!token) {
+//           res.redirect('/admin/login');
+//      }
+//      //verify if the token is legit
+//      jwt.verify(token, process.env.TOKEN_SECRET, async (err, decodedToken)=>{
+//        if(err){
+//              res.redirect('/admin/login');
+//        }else{
+//          if (decodedToken.role === 'superadmin') {
+//               next();
+//          } else {
+//               res.redirect('/admin/login');
+//          }
+         
+//        }
+//      })
+//   }
 
 module.exports = { isLoggedIn, isAdmin}

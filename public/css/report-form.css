@@ -85,6 +85,7 @@ font-family: Mulish;
 font-style: normal;
 font-weight: normal;
 font-size: 24px;
+z-index: 3;
 line-height: 100%;
 letter-spacing: -0.015em;
 color: #FFFFFF;
@@ -92,10 +93,10 @@ color: #FFFFFF;
 }
 
 #report-form{
-    
+    z-index: 2;
     padding:0px;
    background: #31326F;
-   height: auto;
+   height: 85px;
    width: 100%;
    display:flex;
    align-items: center;
@@ -106,6 +107,7 @@ color: #FFFFFF;
 }
 #v-form { 
     padding:0 32px 0 32px;
+    
 }
 #v-form{
     display:flex;
@@ -137,6 +139,7 @@ color: #31326F;
    width: 100%;
    font-size:1rem;
    padding:0 7px;
+   z-index: 2;
    outline-color: none;
    margin-bottom: 10px;
    background-color: #FFFFFF;
@@ -155,7 +158,10 @@ color: #31326F;
 
 
 /* Tablet view */
-@media (width:768px) and (height:1024px){}
+@media (width:768px) and (height:1024px){
+
+    
+}
 
 
 

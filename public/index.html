@@ -156,51 +156,54 @@
 
     <!-- volunteer form -->
     <section class="volunteer-form" >
-      <form  method="POST" id="v-form">
+      <form method="POST" id="v-form" class="v-form">
+       
         <h4>Volunteer Form</h4>
         <h6 class="p">Please complete this form to begin your application process. after this, an agent will reach out
           to get to know you better. </h6>
+      <div class="errors"></div>
+
     <div class="grid-lay">
       <div>
          FIRST NAME
-      <input type="text" name="firstname" placeholder="First Name" required>
+      <input id="firstname" type="text" name="firstname" placeholder="First Name" required>
 
       </div>
       <div>
         <label for="lastname">LAST NAME</label>
-      <input type="text" name="lastname" placeholder="Last Name" required>
+      <input id="lastname" type="text" name="lastname" placeholder="Last Name" required>
 
       </div>
       <div>
         <label for="email">EMAIL ADDRESS</label>
-      <input type="text" name="email" placeholder="Email Address" required>
+      <input id="email" type="email" name="email" placeholder="Email Address" required>
 
       </div>
       <div>
          <label for="phone">PHONE NUMBER</label>
-      <input type="text" name="phone_number" placeholder="Phone Number" required>
+      <input id="phone_number" type="text" name="phone_number" placeholder="Phone Number" required>
 
       </div>
       <div>
         <label for="gender">Gender</label>
-      <select name="gender">
+      <select id="gender" name="gender">
         <option value="male">Male</option>
         <option value="female">Female</option>
       </select>
       </div>
       <div>
-        <label for="DOB">DATE OF BIRTH</label>
-      <input type="date" name="date_of_birth" placeholder="Select your DOB" required>
+        <label  for="DOB">DATE OF BIRTH</label>
+      <input id="dob" type="date" name="date_of_birth" placeholder="Select your DOB" required>
 
       </div>
              <div>
                 <label for="occupation">OCCUPATION</label>
-      <input type="text" name="occupation" placeholder="Occupation" required>
+      <input id="occupation" type="text" name="occupation" placeholder="Occupation" required>
 
              </div> 
              <div>
               <label for="state">STATE OF RESIDENCE</label>
-              <select name="state">
+              <select id="state" name="state">
                 <option value="Abia">Abia</option>
                 <option value="abuja">Abuja</option>
                 <option value="Adamawa">Adamawa</option>
@@ -242,13 +245,13 @@
              </div>              
                  
         <label for="role">ROLE</label>
-        <select class="volunteer_as" name="volunteer_as">
+        <select id="volunteer_as" class="volunteer_as" name="volunteer_as">
           <option value="lawyer">Lawyer</option>
           <option value="counsellor">Counsellor</option>
-          <option value="manager">Manger</option>
+          <option value="manager">Human Activist</option>
         </select>
         <label for="about">ABOUT YOURSELF</label>
-        <textarea name="about"
+        <textarea id="about" name="about"
           placeholder="Please tell us a bit about yourself and why you would like to sign up as a volunteer member of Shuush."></textarea>
         <button class="submit" type="submit">Submit</button>
       </form>
@@ -259,5 +262,5 @@
 <script>
   AOS.init();
 </script>
-<script src="../js/main.js"></script>
+<script src="/js/main.js"></script>
 </html>

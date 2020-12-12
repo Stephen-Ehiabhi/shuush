@@ -31,7 +31,7 @@ router.post('/', async (req,res)=>{
                     abusers_department,
                     date_victim_was_assaulted,
                     victims_story,
-                    email,date_of_report
+                    email
                   } = req.body;
 
      //create a new report
@@ -47,7 +47,6 @@ router.post('/', async (req,res)=>{
                     abusers_department,
                     date_victim_was_assaulted,
                     victims_story,
-                    
                   //   victims_case_evidence,
                     email,  
                      case_status: "pending",
@@ -57,7 +56,7 @@ router.post('/', async (req,res)=>{
 
     try {
            const latestReport = await newReports.save()
-            res.redirect('/')    
+               
     } catch (error) {
          res.status(404).send(`There was an error saving a new report ${error}`)                  
     }
@@ -71,8 +70,7 @@ router.get('/cases',isAdmin, async (req,res)=> {
   return res.status(201).send(getReports)                                             
 } catch (error) {
    res.status(404).send(`There was an ${error} returning the DB`)                                                   
-}
-
+  }
 })
 
 //read a single case
@@ -118,7 +116,7 @@ router.delete('/:id',isAdmin,async (req,res) => {
   })
 
   //returns the amount of reported cases
-  router.get('/count',isAdmin,async (req,res) => {
+  router.get('/totalcount',isAdmin,async (req,res) => {
  try {
       //get all the reports in the db
       const getReportCount = await Reports.countDocuments()
@@ -127,7 +125,19 @@ router.delete('/:id',isAdmin,async (req,res) => {
       res.status(404).send(`There was an error returning the DB`)                                                   
    }
    
-
+ 
   })
+
+
+    //returns the amount of pending reported cases
+   //  router.get('/total_pending',isAdmin,async (req,res) => {
+   //    try {
+   //         //get all the reports in the db
+   //         const getReportCount = await Reports.countDocuments({case_status: "pending"})
+   //         return res.json(getReportCount)                                             
+   //      } catch (error) {
+   //         res.status(404).send(`There was an error returning the DB`)                                                   
+   //      } 
+   // })    
 
 module.exports = router

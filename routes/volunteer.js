@@ -3,6 +3,8 @@ const router = express.Router();
 const jwt = require("jsonwebtoken");
 const path = require("path");
 const bcrypt = require('bcryptjs');
+var moment = require('moment'); // require
+
 
 //MIDDLEWARES
 router.use(express.static('./frontend/css'));
@@ -68,7 +70,7 @@ router.get("/profile/:id", async (req, res) => {
 router.post("/register",async (req, res) => {
  
 //validate the input
-const {firstname,lastname,date_of_birth,occupation,state_of_residence,volunteer_as,gender,about,phone_number,email} = req.body;
+const {firstname,lastname,date_of_registration,date_of_birth,occupation,state_of_residence,volunteer_as,gender,about,phone_number,email} = req.body;
 
 //check if volunteer already exists
   const volunteer = await Volunteer.findOne({ email });
@@ -85,15 +87,16 @@ const {firstname,lastname,date_of_birth,occupation,state_of_residence,volunteer_
     gender,
     about,
     phone_number,
-    email
+    email,
+    date_of_registration: moment().format()
 });
 try{
 //saving a volunteer to DB
   const savedVolunteer = await newVolunteer.save();
-  res.redirect("/")
+  res.status(200).send("Application sucessfully sent")
 }catch(err){
 //  const errors =  handleErrors(err)
- res.status(400).send(err)
+ res.status(404).send(err)
  console.log(err);
  
 }

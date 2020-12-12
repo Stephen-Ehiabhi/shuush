@@ -56,4 +56,64 @@ setInterval(changeSpan,1500)
 
 
 }
+
+
+// form element
+const form = document.querySelector('#v-form')
+
+//adding a submit event to the form element
+form.addEventListener("submit", async (e)=>{
+    
+  e.preventDefault()
+
+  const errors = document.querySelector(".errors")
+
+  const formData = {
+       firstname: document.querySelector('#firstname').value,
+       lastname: document.querySelector('#lastname').value,
+       email: document.querySelector('#email').value,
+       phone_number: document.querySelector('#phone_number').value,
+       date_of_birth: document.querySelector('#dob').value,
+       occupation: document.querySelector('#occupation').value,
+      state: document.querySelector('#state').value,
+       volunteer_as: document.querySelector('#volunteer_as').value,
+       about: document.querySelector('#about').value
+  };
+ 
+console.log(formData);
+
+
+// form validation
+// if (phone_number !== Number) {
+//    const error = "Phone Number must be a number"
+//   return errors.value = error
+// }
+// if(firstname <= 4)
+//    const error = "Names must be more than fout letters"
+//    return errors.value = error
+// }
+
+
+
+
+ try {
+  const newFormData = await fetch('/volunteer/register',{
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(formData)
+   })
+
+  const fetchedPost = await newFormData.json();
+
+  console.log(fetchedPost)
+//   throw the errors to the frontend
+  errors.value = fetchedPost._message
+
+ } catch (error) {
+     console.log(error)
+ }
+  
+})
 page()
