@@ -58,7 +58,7 @@ router.post('/', async (req,res)=>{
            const latestReport = await newReports.save()
                
     } catch (error) {
-         res.status(404).send(`There was an error saving a new report ${error}`)                  
+         res.status(404).json(`There was an error saving a new report ${error}`)                  
     }
 })
 
@@ -67,9 +67,9 @@ router.get('/cases',isAdmin, async (req,res)=> {
  try {
    //get all the reports in the db
    const getReports = await Reports.find()
-  return res.status(201).send(getReports)                                             
+  return res.status(201).json(getReports)                                             
 } catch (error) {
-   res.status(404).send(`There was an ${error} returning the DB`)                                                   
+   res.status(404).json(`There was an ${error} returning the DB`)                                                   
   }
 })
 
@@ -78,9 +78,9 @@ router.get('/:id',isAdmin, async (req,res) => {
 try {
    //get all the reports in the db
    const getReports = await Reports.findById({ _id: req.params.id })
-   return res.status(200).send(getReports)                                             
+   return res.status(200).json(getReports)                                             
 } catch (error) {
-   res.status(404).send(`There was an ${error} returning the DB`)                                                   
+   res.status(404).json(`There was an ${error} returning the DB`)                                                   
 }
 
 })
@@ -94,10 +94,10 @@ try {
 //      })
 //      try { 
 //        const updatedInfo = await updatedReport.save()
-//        return res.status(200).send(updatedInfo)
+//        return res.status(200).json(updatedInfo)
         
 //      } catch (error) {
-//       res.status(404).send(`There was an ${error} returning the DB`)                                                   
+//       res.status(404).json(`There was an ${error} returning the DB`)                                                   
 
 //      }
   
@@ -108,9 +108,9 @@ router.delete('/:id',isAdmin,async (req,res) => {
    try {
      //get all the reports in the db
      const getReports = await Reports.findByIdAndDelete({ _id: req.params.id})
-     return res.status(200).send(getReports)                                             
+     return res.status(200).json(getReports)                                             
   } catch (error) {
-     res.status(404).send(`There was an error returning the DB`)                                                   
+     res.status(404).json(`There was an error returning the DB`)                                                   
   }
   
   })
@@ -122,7 +122,7 @@ router.delete('/:id',isAdmin,async (req,res) => {
       const getReportCount = await Reports.countDocuments()
       return res.json(getReportCount)                                             
    } catch (error) {
-      res.status(404).send(`There was an error returning the DB`)                                                   
+      res.status(404).json(`There was an error returning the DB ${error}`)                                                   
    }
    
  
@@ -136,7 +136,7 @@ router.delete('/:id',isAdmin,async (req,res) => {
    //         const getReportCount = await Reports.countDocuments({case_status: "pending"})
    //         return res.json(getReportCount)                                             
    //      } catch (error) {
-   //         res.status(404).send(`There was an error returning the DB`)                                                   
+   //         res.status(404).json(`There was an error returning the DB`)                                                   
    //      } 
    // })    
 

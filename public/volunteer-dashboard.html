@@ -1,20 +1,469 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Volunteer Dashboard</title>
-</head>
-<body>
-    <div class="message-holder">
-    <form method="POST" action="/message" class="chat-form" >
-       <textarea id="msg" name="message" placeholder="Enter message" autocomplete="off"></textarea>
-       <input type="submit" value="send">
-    </form>
-    <!-- <ul>
-    </ul> -->
-  </div>
-</body>
-<script src="/socket.io/socket.io.js"></script>
-<script src="/js/main.js"></script>
-</html>
+   
+   
+ .burger{
+  display: none;
+}
+.report-form{
+  height:20px;
+}
+
+.logo{
+  height: 111px;
+width: 125px;
+/* display: none; */
+}
+.new-icons{
+  display: block;
+}
+span{
+  font-weight: bold;
+}
+.nav-links-div{
+
+  height:0;
+  display:block;
+ transform: translateX(0);
+  background: none;
+ text-align: center;
+ padding:0 112px;
+ color:rgba(49, 50, 111, 1);
+ font-weight: 300;
+ font-size: 2rem;
+ opacity: 2;
+}
+/* nav ul li a.current{
+  font-weight: 400;
+  color:red;
+} */
+ul{
+position:fixed;
+  top:2rem;
+  right:112px;
+
+}
+ul li{
+  padding-left:50px;
+  font-size: 28px;
+}
+ul li a:active, ul li a:hover{
+  font-weight: 600;
+}
+.remove-nav:hover{
+  position: absolute;
+  top:32px;
+  right:0px;
+}
+.remove-nav{
+  display:none;
+}
+.remove-nav, .remove-volunteer-form{
+  position: absolute;
+  top:32px;
+  right:32px;
+}
+nav{
+  height:110px;
+padding: 0 40px 0 40px;
+}
+ul{
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  height:auto;
+  width:auto;
+  padding-top: 1rem;
+  /* position: sticky;
+  top:0 ; */
+  justify-content:space-evenly;
+}
+ul li{
+  list-style-type: none;
+}
+
+/* chatbot */
+#report-case{
+width: 414px;
+left:73%;  
+height:60px;
+background:none;
+}
+#report-form{
+height:80px;
+position:absolute;
+top:7rem;
+}
+.report-header{
+
+}
+#cf-context{
+width: 100%;
+height:550px;
+position:absolute;
+top:11.5rem;
+right:0; 
+overflow-y: hidden;
+padding:0 32px 0 32px;
+}
+
+
+
+
+/*section one */
+.section-one{
+  background: #DBF6E9;
+  height: 100vh;
+ 
+}
+.section-one-content{
+  padding:60px 40px 0 40px;
+ 
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+}
+.top-header{
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 100%;
+  /* identical to box height, or 63px */
+  width:484.19px;
+  letter-spacing: -0.015em;
+  color: #31326F;
+  opacity: 0.5;
+}
+.bottom-header{
+  font-weight: 300;
+  font-size: 90px;
+  line-height: 100%;
+  /* or 108px */
+  height: auto;
+width: 790px;
+margin-top: 8px;
+margin-bottom: 8px;
+  letter-spacing: -0.015em;
+  
+  /* Shuush_Purple */
+  
+  color: #31326F;
+}
+
+.info{
+  font-weight: 300;
+  font-size: 30px;
+  line-height: 45px;
+  letter-spacing: -1.5%;
+  
+width: 800px;
+  color: #31326F;
+  opacity: 0.3;
+}
+.registration-btn{
+  display: flex;
+  justify-content: space-between;
+  height:210px;
+  width:auto;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  align-items: flex-end;
+  top:53%;
+  /* bottom:14%; */
+  right:0px;
+  padding: 0;
+}
+.report:hover p{
+ display: inline;
+ 
+}
+
+.report:hover{
+  width:262px;
+  height:96px;
+  transition:.3s;
+}
+.volunteer:hover p{
+  display: inline;
+}
+.volunteer:hover{
+  width:214px;
+ height:96px;
+ transition:.3s;
+}
+.registration-btn button{
+  /* height: 108px;
+width: 306px; */
+border-radius: 4px 0px 0px 4px;
+font-size: 24px;
+font-weight: 600;
+line-height: 100%;
+margin-top:16px;
+
+}
+.registration-btn p{
+  font-size: 1.5rem;
+}
+.volunteer svg {
+  width:30.14px;
+  height:43.17px;
+}
+.report svg{
+  width:31.76px;
+  height:31px;
+}
+.report p, .volunteer p{
+  display:none;
+}
+.report{
+  display: flex;
+  background: #31326F;
+  align-items: center;
+  justify-content: space-around;
+  border: none;
+  width:96px;
+  margin:0;
+  height: 96px;
+  padding:24px;
+ font-size: 8rem;
+}
+.volunteer{
+ /* margin-left:-13rem; */
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
+  /* width: 214px;
+   height: 96px; */
+   width:96px;
+   height: 96px;
+  padding: 24px;
+  color:#31326F;
+  font-size: 8rem;
+  border: none;
+  border:3px solid #31326F;
+}
+.volunteer-form h6{
+  width:400px;
+  line-height:10px;
+}
+.section-one,.section-two,.section-three,.section-four,.section-five{
+  scroll-snap-align: start;
+  
+}
+.section-two{
+  background: #A9E4D7;
+  padding: 110px 40px 13px 40px;
+  height: 100vh;
+  display: flex;
+}
+.section-two h1{
+
+width: 400px;
+font-weight: 300;
+font-size: 75px;
+line-height: 100%;
+/* or 128px */
+
+letter-spacing: -0.015em;
+
+color: #31326F;
+}
+#v-form{
+  display:flex;
+  flex-direction: column;
+}
+.section-two-container{
+  display: flex;
+ 
+  /* margin: auto; */
+  
+}
+.section-two-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 320.2px;
+  margin-left:250px;
+  margin-top: -160px;
+  align-items: center;
+}
+
+.first-info{
+  width: 600px;
+  height: auto;
+ box-shadow: 10px 20px 20px 2px rgb(172, 164, 164);
+  background: #DEF5A3;
+  border-radius: 4.16398px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 150%;
+  text-align: center;
+  letter-spacing: -0.015em;
+  color: #31326F;
+  padding: 15px;
+  margin-bottom:20px;
+  text-align: center;
+
+}
+
+.second-info{
+   width:auto;
+}
+
+.second-info, .third-info{
+  width: 530px;
+height: auto;
+background: #FFFFFF;
+border-radius: 4.42302px;
+font-weight: bold;
+font-size: 18px;
+line-height: 160%;
+margin-bottom:20px;
+text-align: center;
+letter-spacing: -0.015em;
+color: #31326F;
+padding: 15px;
+text-align: center;
+}
+
+.third-info{
+  padding: 25px;
+  height:auto;
+  
+}
+/* .third-info:hover{
+  width: 800px;
+  height: auto;
+  box-shadow: 10px 20px 20px 2px rgb(172, 164, 164);
+}
+.second-info:hover{
+   width: 800px;
+   height: auto;
+   box-shadow: 10px 20px 20px 2px rgb(172, 164, 164);
+} */
+
+.image-icon-one,.image-icon-two,.image-icon-three{
+  height: 320px;
+  width: 350px;
+ 
+ }
+.image-icon-two,.image-icon-three{
+  margin-top: -176px;
+  margin: auto;
+}
+.image-icon-three{
+  /* display:none;
+   */
+}
+.section-three, .section-four,.section-five{
+background: #A8DDA8;
+padding: 0 40px 0 40px;
+height: 100vh;
+display: flex;
+align-content: center;
+flex-direction: row;
+justify-content: space-around;
+}
+.section-three div h1, .section-four div h1,.section-five div h1{
+  font-weight: 300;
+  font-size: 75px;
+  line-height: 100%;
+  /* or 128px */
+  
+  letter-spacing: -0.015em;
+  width: 400px;
+  /* Shuush_Purple */
+  
+  color: #31326F;
+}
+.section-three p, .section-four p,.section-five p{
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 35px;
+  /* or 36px */
+  margin-top: 30px;
+  letter-spacing: -0.015em;
+  width:500px;
+  /* Shuush_Purple */
+  
+  color: #31326F;
+  opacity: 0.5;
+}
+
+.section-four{
+  background: #EFFAD3;
+ 
+}
+
+.section-five{
+  background: #28ABB9;
+  padding: 0px 40px 0 40px;
+  height: 100vh;
+  display: flex;
+
+}
+.section-five div{
+   /* text-align: left; */
+
+}
+.section-five div h1{
+  width:577.11px;
+  font-weight: 80px;
+  color: #FFDADA;
+}
+.section-five div p{
+  font-family: Mulish;
+
+font-style: normal;
+font-weight: normal;
+letter-spacing: -0.015em;
+text-align: left;
+
+}
+.v-f{
+  background-color: rgb(233, 205, 205);
+  
+  display: flex;
+  justify-content: center;
+}
+.volunteer-form{
+  padding:30px 20px 26px 20px;
+  height:650.01px;
+width: 450px;
+position: absolute;
+top: 3300px;
+right:270px;
+/* margin:80px auto 10px auto;
+*/
+}
+/* .p,label{
+  display: none;
+} */
+.donate{
+  width: 240px;
+  height:70px;
+  font-size: 24px;
+}
+#v-form h6{
+  width:auto;
+  line-height: 19px;
+  margin-bottom: 9px;
+}
+.grid-lay{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows:1fr 1fr 1fr 1fr;
+  grid-gap: 5px;
+  
+}
+#v-form input,textarea,select{
+  width: 150.07px;
+  height:28px;
+  margin-bottom: 0;
+}
+
+textarea{
+margin-top: 5px;
+height:110px;
+}
+textarea,.volunteer_as{
+ width:100%;
+}

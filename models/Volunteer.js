@@ -48,6 +48,10 @@ const volunteerSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    isVerified: {
+        type: Boolean,
+        default: false
+    },
     volunteer_as: {
         type: String,
         default: "lawyer",

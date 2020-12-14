@@ -16,28 +16,28 @@ const Volunteer = require("../models/Volunteer");
 
 //get routes to load restration page
 router.get("/register", (req,res) => {
-  res.sendFile(path.join(__dirname,'../public','register.html'))
+  res.jsonFile(path.join(__dirname,'../public','register.html'))
 });
 
 
 //get routes to load the login page
 router.get("/login", (req, res) => {
-  res.sendFile(path.join(__dirname, '../public', 'login.html'))
+  res.jsonFile(path.join(__dirname, '../public', 'login.html'))
 });
 
 
 //get route to load the dashboard file
 router.get("/dashboard", (req, res) => {
-  res.sendFile(path.join(__dirname, '../public', 'volunteer-dashboard.html'))
+  res.jsonFile(path.join(__dirname, '../public', 'volunteer-dashboard.html'))
 });
 
 //get route to get a single volunteer
 router.get("/profile/:id", async (req, res) => {
   try{
       const volunteer = await Volunteer.findById(req.params.id);
-      return res.status(200).send(volunteer);
+      return res.status(200).json(volunteer);
    }catch (error) {
-      return res.status(404).send('volunteer not found')
+      return res.status(404).json('volunteer not found')
   }
 });
 
@@ -70,7 +70,7 @@ router.get("/profile/:id", async (req, res) => {
 router.post("/register",async (req, res) => {
  //console.log(req.body)
 //validate the input
-const {firstname,lastname,date_of_registration,date_of_birth,occupation,state_of_residence,volunteer_as,gender,about,phone_number,email} = req.body;
+const {firstname,lastname,isVerified,date_of_registration,date_of_birth,occupation,state_of_residence,volunteer_as,gender,about,phone_number,email} = req.body;
 
 //check if volunteer already exists
   const volunteer = await Volunteer.findOne({ email });
@@ -88,6 +88,7 @@ const {firstname,lastname,date_of_registration,date_of_birth,occupation,state_of
     about,
     phone_number,
     email,
+    isVerified: false,
     date_of_registration: moment().format()
 });
 try{
@@ -97,8 +98,8 @@ try{
   res.status(200).json({success: "Application sucessfully sent"})
 }catch(err){
 //  const errors =  handleErrors(err)
-//console.log("error");
- res.status(404).json({v_Error: err})
+  console.log("error"+err);
+ res.status(404).json({"error": err})
  
 }
 });
@@ -113,11 +114,11 @@ const { email,password } = req.body;
 try {
    //check if volunteer exists
   const volunteer = await volunteer.findOne({email});
-  if(!volunteer) return res.status(404).send("Incorrect password or Email");
+  if(!volunteer) return res.status(404).json("Incorrect password or Email");
 
   //check password correct
   const passwordIsCorrect = await bcrypt.compare(password, volunteer.password);
-  if(!passwordIsCorrect)  return res.status(404).send("Incorrect password or Email");
+  if(!passwordIsCorrect)  return res.status(404).json("Incorrect password or Email");
 
   const maxAge = 3 * 24 * 60 * 60;
 
@@ -131,7 +132,7 @@ try {
 
 } catch (err) {
   // const errors =  handleErrors(err)
-  res.status(400).send(error)
+  res.status(400).json(error)
 }
 });
 
@@ -143,9 +144,9 @@ router.get('/users', async (req,res)=> {
   try {
     //get all the Volunteer in the db
     const volunteer = await Volunteer.find()
-   return res.status(201).send(volunteer)                                             
+   return res.status(201).json(volunteer)                                             
  } catch (error) {
-    res.status(404).send(`There was an ${error} returning the DB`)                                                   
+    res.status(404).json(`There was an ${error} returning the DB`)                                                   
  }
  
  })
@@ -155,9 +156,9 @@ router.get('/users', async (req,res)=> {
   try {
     //get all the Volunteer in the db
     const volunteer = await Volunteer.findById({ _id: req.params.id })
-    return res.status(200).send(volunteer)                                             
+    return res.status(200).json(volunteer)                                             
  } catch (error) {
-    res.status(404).send(`There was an ${error} returning the DB`)                                                   
+    res.status(404).json(`There was an ${error} returning the DB`)                                                   
  }
  
  })
@@ -168,7 +169,7 @@ router.get('/users', async (req,res)=> {
     const getVolunteerCount = await Volunteer.countDocuments()
     return res.json(getVolunteerCount)                                             
  } catch (error) {
-    res.status(404).send(`There was an error returning the DB`)                                                   
+    res.status(404).json(`There was an error returning the DB`)                                                   
  }
  })
  // //update a single case
@@ -180,10 +181,10 @@ router.get('/users', async (req,res)=> {
  //      })
  //      try { 
  //        const updatedInfo = await updatedReport.save()
- //        return res.status(200).send(updatedInfo)
+ //        return res.status(200).json(updatedInfo)
          
  //      } catch (error) {
- //       res.status(404).send(`There was an ${error} returning the DB`)                                                   
+ //       res.status(404).json(`There was an ${error} returning the DB`)                                                   
  
  //      }
    
@@ -194,17 +195,17 @@ router.get('/users', async (req,res)=> {
     try {
       //get all the Volunteer in the db
       const volunteer = await Volunteer.findByIdAndDelete({ _id: req.params.id})
-      return res.status(200).send(volunteer)                                             
+      return res.status(200).json(volunteer)                                             
    } catch (error) {
-      res.status(404).send(`There was an error returning the DB`)                                                   
+      res.status(404).json(`There was an error returning the DB`)                                                   
    }
    
    })
 
   //  router.get('/logout',isAdmin,function(req,res){
   //   req.user.deleteToken(req.token,(err,user)=>{
-  //       if(err) return res.status(400).send(err);
-  //       res.sendStatus(200);
+  //       if(err) return res.status(400).json(err);
+  //       res.jsonStatus(200);
   //   });
 
 

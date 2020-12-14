@@ -2,12 +2,12 @@
 // Load the total number of reported cases
 const getReportCount = async () => {
     try {
-      const stats = await fetch("/report/count")
+      const stats = await fetch("/report/totalcount")
     const fetchedStats = await stats.json()
                      
-    // console.log(fetchedStats)
-    const reportStats = document.querySelector(".r_r")
-    reportStats.textContent = fetchedStats   
+    console.log(fetchedStats)
+    // const reportStats = document.querySelector(".r_r")
+    // reportStats.textContent = fetchedStats
     } catch (error) {
         console.log(error);
         

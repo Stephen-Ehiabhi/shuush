@@ -109,7 +109,7 @@ form.addEventListener("submit", async (e)=>{
 
   const fetchedPost = await newFormData.json();
 
-  //console.log(fetchedPost)
+console.log(fetchedPost)
 //   throw the errors to the frontend
   errors.textContent = fetchedPost.error
   success.textContent = fetchedPost.success
