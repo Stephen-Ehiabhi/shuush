@@ -1978,9 +1978,9 @@ span {
 
     .section-two h1 {
 
-        width: 477px;
+        width: 440px;
         font-weight: 300;
-        font-size: 128px;
+        font-size: 100px;
         line-height: 100%;
         /* or 128px */
 
@@ -2092,7 +2092,7 @@ span {
     .section-four div h1,
     .section-five div h1 {
         font-weight: 300;
-        font-size: 120px;
+        font-size: 110px;
         line-height: 100%;
         /* or 128px */
 
@@ -2162,14 +2162,16 @@ span {
 
 
     }
-
+button, a{
+    cursor: pointer;
+}
     .volunteer-form {
         /* padding:30px 20px 26px 20px; */
         height: 680px;
         width: 30%;
         position: fixed;
         top: 100px;
-        overflow-y: hidden;
+        overflow-y: auto;
         display: none;
         left:38%;
         /* margin:80px 50% ;
