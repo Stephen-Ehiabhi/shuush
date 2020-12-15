@@ -19,8 +19,8 @@ body{
 
 /* chatbot styles */
 #cf-context{
-    width: 1512px;
-    height:82vh;
+    width: 100vw;
+    height:1512px;
     position:absolute;
     top:88px;
  
