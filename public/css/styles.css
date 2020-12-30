@@ -106,6 +106,13 @@ ul li {
     height: auto;
 }
 
+.volunteer-container {
+    display: none;
+    display: flex;
+    /* justify-content: center;
+    align-content: center; */
+}
+
 .volunteer-form {
     padding: 50px 20px 20px 20px;
     background: #ffdada;
@@ -113,7 +120,7 @@ ul li {
     width: 100vw;
     position: fixed;
     top: 0px;
-display: none;
+    /* display: none; */
     z-index: 5;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -185,11 +192,13 @@ display: none;
     letter-spacing: -0.015em;
     color: #31326F;
 }
-.remove{
+
+.remove {
     position: absolute;
-    top:17px;
-    right:17px;
+    top: 17px;
+    right: 17px;
 }
+
 #v-form h6 {
     font-weight: 300;
     font-size: 16px;
@@ -205,7 +214,8 @@ display: none;
 }
 
 #v-form input,
-select,.volunteer_as{
+select,
+.volunteer_as {
     height: 25px;
     width: 100%;
     font-size: 1rem;
@@ -410,9 +420,12 @@ span {
     font-size: 13px;
     border: 2px solid #31326F;
 }
-.remove-nav, .remove{
+
+.remove-nav,
+.remove {
     cursor: pointer;
 }
+
 .report {
     display: flex;
     flex-direction: row;
@@ -675,6 +688,10 @@ span {
         font-size: 5px;
     }*/
 }
+
+
+
+
 
 
 
@@ -979,7 +996,7 @@ span {
 
     }
 
-    
+
 
     .image-icon-one,
     .image-icon-two,
@@ -1080,13 +1097,26 @@ span {
         justify-content: center;
     }
 
+    .volunteer-container {
+        height: 100vh;
+        width: 100%;
+        background-color: #31326fb0;
+        position: fixed;
+        z-index: 4;
+        top: 0px;
+        /* display: flex; */
+        display: none;
+        justify-content: center;
+        align-content: center;
+        /* margin: 0; */
+    }
+
     .volunteer-form {
         padding: 30px 20px 26px 20px;
-        height: 650.01px;
+        height: 664.01px;
         width: 430px;
-
-
-        margin: 80px auto 10px auto;
+        margin-top: 30px;
+        /* margin: 80px auto 10px auto; */
 
     }
 
@@ -1149,8 +1179,9 @@ span {
     }
 
     .logo {
-        height: 111px;
-        width: 125px;
+        height: 100px;
+        width: 105px;
+        
         /* display: none; */
     }
 
@@ -1182,7 +1213,7 @@ span {
       } */
     ul {
         position: fixed;
-        top: 2rem;
+        top: 1rem;
         right: 112px;
 
     }
@@ -1215,7 +1246,7 @@ span {
     }
 
     nav {
-        height: 110px;
+        height: 100px;
         padding: 0 40px 0 40px;
     }
 
@@ -1320,13 +1351,13 @@ span {
     .registration-btn {
         display: flex;
         justify-content: space-between;
-        height: 210px;
+        height: 200px;
         width: auto;
         justify-content: center;
         flex-direction: column;
         position: fixed;
         align-items: flex-end;
-        top: 53%;
+        top: 46%;
         /* bottom:14%; */
         right: 0px;
         padding: 0;
@@ -1389,9 +1420,9 @@ span {
         align-items: center;
         justify-content: space-around;
         border: none;
-        width: 96px;
+        width: 90px;
         margin: 0;
-        height: 96px;
+        height: 90px;
         padding: 24px;
         font-size: 8rem;
     }
@@ -1403,8 +1434,8 @@ span {
         justify-content: space-around;
         /* width: 214px;
          height: 96px; */
-        width: 96px;
-        height: 96px;
+        width: 90px;
+        height: 90px;
         padding: 24px;
         color: #31326F;
         font-size: 8rem;
@@ -1527,8 +1558,8 @@ span {
     .image-icon-one,
     .image-icon-two,
     .image-icon-three {
-        height: 320px;
-        width: 350px;
+        height: 290px;
+        width: 270px;
 
     }
 
@@ -1579,7 +1610,7 @@ span {
         /* or 36px */
         margin-top: 30px;
         letter-spacing: -0.015em;
-        width: 500px;
+        width: 460px;
         /* Shuush_Purple */
 
         color: #31326F;
@@ -1627,21 +1658,42 @@ span {
         justify-content: center;
     }
 
+    button,
+    a {
+        cursor: pointer;
+    }
+
+    .volunteer-container {
+        height: 100vh;
+        width: 100%;
+        background-color: #31326fb0;
+        position: fixed;
+        z-index: 4;
+        top: 0px;
+        display: flex;
+        display: none;
+        justify-content: center;
+        align-content: center;
+        margin: 0;
+    }
+
     .volunteer-form {
-        padding: 30px 20px 26px 20px;
-        height: 650.01px;
-        width: 450px;
-        position: absolute;
-        top: 3300px;
-        right: 270px;
-        /* display:none; */
-        /* margin:80px auto 10px auto;
-      */
+        /* padding:30px 20px 26px 20px; */
+        height: auto;
+        width: 45%;
+        /* position: fixed;
+        top: 60px; */
+        margin-top: 30px;
+        overflow-y: auto;
+        /* display: none; */
+        /* left: 30%; */
+        /* margin:80px 50% ;
+     */
     }
 
     /* .p,label{
         display: none;
-      } */
+    } */
     .donate {
         width: 240px;
         height: 70px;
@@ -1658,25 +1710,29 @@ span {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr;
-        grid-gap: 5px;
+        grid-gap: 4px;
 
+    }
+
+    .volunteer_as {
+        width: 100%;
+        padding: 0 7px;
+        margin-bottom: 5px;
     }
 
     #v-form input,
     textarea,
     select {
-        width: 150.07px;
+        width: 100%;
         height: 28px;
+        /* padding-left: 10px; */
         margin-bottom: 0;
     }
 
-    textarea {
-        margin-top: 5px;
-        height: 110px;
-    }
-
     textarea,
-    .volunteer_as {
+    .about {
+        margin-top: 0;
+        height: 110px;
         width: 100%;
     }
 
@@ -1952,7 +2008,7 @@ span {
         padding: 24px;
         color: #31326F;
         font-size: 8rem;
-        
+
         border: none;
         border: 3px solid #31326F;
     }
@@ -2058,7 +2114,7 @@ span {
 
     }
 
-    
+
 
     .image-icon-one,
     .image-icon-two,
@@ -2164,18 +2220,35 @@ span {
 
 
     }
-button, a{
-    cursor: pointer;
-}
+
+    button,
+    a {
+        cursor: pointer;
+    }
+
+    .volunteer-container {
+        height: 100vh;
+        width: 100%;
+        background-color: #31326f88;
+        position: fixed;
+        z-index: 4;
+        top: 0px;
+        display: flex;
+        display: none;
+        justify-content: center;
+        align-content: center;
+        margin: 0;
+    }
+
     .volunteer-form {
         /* padding:30px 20px 26px 20px; */
         height: 680px;
         width: 30%;
-        position: fixed;
-        top: 100px;
-        overflow-y: auto;
-        display: none;
-        left:38%;
+        /* z-index: 1; */
+        /* overflow-y: none;
+       display: none; */
+        margin-top: 30px;
+        /* left:38%; */
         /* margin:80px 50% ;
      */
     }
@@ -2203,8 +2276,8 @@ button, a{
 
     }
 
-    .volunteer_as{
-        width:100%;
+    .volunteer_as {
+        width: 100%;
         padding: 0 7px;
         margin-bottom: 5px;
     }
