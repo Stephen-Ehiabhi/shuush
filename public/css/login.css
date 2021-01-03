@@ -84,3 +84,10 @@ color: #2E434E;
 font-weight: 800;
 margin-left: -230px;
 }
+.errors{
+        font-size: 1rem;
+        margin-left: -6.8rem;
+        /* letter-spacing: 1px; */
+        font-weight: 600;
+        color:red;
+}

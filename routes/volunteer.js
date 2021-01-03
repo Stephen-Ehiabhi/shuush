@@ -74,7 +74,7 @@ const {firstname,lastname,isVerified,date_of_registration,date_of_birth,occupati
 
 //check if volunteer already exists
   const volunteer = await Volunteer.findOne({ email });
-  if(volunteer) return res.status(404).json({error: "email already exists"});
+  if(volunteer) return res.status(404).json({error: "Volunteer already exists"});
 
 //creating a volunteer
   const newVolunteer = new Volunteer({
@@ -97,8 +97,8 @@ try{
   //console.log("successful");
   res.status(200).json({success: "Application sucessfully sent"})
 }catch(err){
-//  const errors =  handleErrors(err)
-  console.log("error"+err);
+// const errors =  handleErrors(err)
+console.log("error"+err);
  res.status(404).json({"error": err})
  
 }

@@ -16,7 +16,7 @@ const { isAdmin} = require("../middlewares/auth")
 
 // //get routes to load admin restration page
 // router.get("/", (req,res) => {
-//   res.sendFile(path.join(__dirname,'../public','user_management.html'))
+//   res.jsonFile(path.join(__dirname,'../public','user_management.html'))
 // });
 
 //get routes to load the login page
@@ -51,11 +51,11 @@ router.get("/dashboard/reports",isAdmin,(req, res) => {
 
 //get route to get a single admin
 router.get("/profile/:id",isAdmin, async (req, res) => {
-  try{
-      const admin = await admin.findById(req.params.id);
-      return res.status(200).send(admin);
+  try {
+    const admin = await admin.findById(req.params.id);
+    return res.status(200).json({admin});
    }catch (error) {
-      return res.status(404).send('admin not found')
+    return res.status(404).json({ "error": 'admin not found' })
   }
 });
 
@@ -92,7 +92,7 @@ const {lastname,firstname,profile_photo,email,password,password2,id} = req.body;
 
 //check if admin already exists
   const admin = await Admin.findOne({ email });
-  if(admin) return res.status(404).send("email already exists");
+  if (admin) return res.status(404).json({"error": "email already exists"});
 
 //hash password
 const salt = await bcrypt.genSalt(12);
@@ -112,10 +112,10 @@ const encryptedPassword = await bcrypt.hash(password, salt);
 try{
 //saving a admin to DB
   const savedadmin = await newadmin.save();
-  res.status(200).send("New user registered");
+  res.status(200).json({"success": "New user registered"});
 }catch(err){
 //  const errors =  handleErrors(err)
- res.status(400).send(err)
+  res.status(400).json({"error": err })
 }
 
 });
@@ -130,11 +130,11 @@ const { email,password } = req.body;
 try {
    //check if admin exists
   const admin = await Admin.findOne({email});
-  if(!admin) return res.status(404).send("Incorrect  Email");
+  if (!admin) return res.status(400).json({error: "Incorrect Password or Email"});
 
   //check password correct
   const passwordIsCorrect = await bcrypt.compare(password, admin.password);
-  if(!passwordIsCorrect)  return res.status(404).send("Incorrect password ");
+  if (!passwordIsCorrect) return res.status(400).json({ error: "Incorrect password or Email" });
 
   const maxAge = 3 * 24 * 60 * 60;
 
@@ -148,7 +148,7 @@ try {
 
 } catch (err) {
   // const errors =  handleErrors(err)
-  res.status(400).send(err)
+  res.status(400).json({ "error": err })
 }
 });
 
@@ -158,21 +158,20 @@ router.get('/users', isAdmin,async (req,res)=> {
   try {
     //get all the admin in the db
     const admin = await Admin.find()
-   return res.status(201).send(admin)                                             
+    return res.status(201).json( admin )                                             
  } catch (error) {
-    res.status(404).send(`There was an ${error} returning the DB`)                                                   
+    res.status(404).json(`There was an ${error} returning the DB`)                                                   
  }
- 
- })
+})
  
  //read a single case
  router.get('/profile/:id', isAdmin,async (req,res) => {
   try {
     //get all the admin in the db
     const admin = await Admin.findById({ _id: req.params.id })
-    return res.status(200).send(admin)                                             
+    return res.status(200).json(admin)                                             
  } catch (error) {
-    res.status(404).send(`There was an ${error} returning the DB`)                                                   
+    res.status(404).json(`There was an ${error} returning the DB`)                                                   
  }
  
  })
@@ -183,7 +182,7 @@ router.get('/users', isAdmin,async (req,res)=> {
     const getadminCount = await Admin.countDocuments()
     return res.json(getadminCount)                                             
  } catch (error) {
-    res.status(404).send(`There was an error returning the DB`)                                                   
+    res.status(404).json(`There was an error returning the DB`)                                                   
  }
  })
  // //update a single case
@@ -195,10 +194,10 @@ router.get('/users', isAdmin,async (req,res)=> {
  //      })
  //      try { 
  //        const updatedInfo = await updatedReport.save()
- //        return res.status(200).send(updatedInfo)
+ //        return res.status(200).json(updatedInfo)
          
  //      } catch (error) {
- //       res.status(404).send(`There was an ${error} returning the DB`)                                                   
+ //       res.status(404).json(`There was an ${error} returning the DB`)                                                   
  
  //      }
    
@@ -209,9 +208,9 @@ router.get('/users', isAdmin,async (req,res)=> {
     try {
       //get all the admin in the db
       const admin = await admin.findByIdAndDelete({ _id: req.params.id})
-      return res.status(200).send(admin)                                             
+      return res.status(200).json(admin)                                             
    } catch (error) {
-      res.status(404).send(`There was an error returning the DB`)                                                   
+      res.status(404).json(`There was an error returning the DB`)                                                   
    }
    
    })
@@ -219,8 +218,8 @@ router.get('/users', isAdmin,async (req,res)=> {
 
   router.get('/logout',isAdmin,function(req,res){
     req.user.deleteToken(req.token,(err,user)=>{
-        if(err) return res.status(400).send(err);
-        res.sendStatus(200);
+        if(err) return res.status(400).json(err);
+        res.jsonStatus(200);
     });
 
 }); 
