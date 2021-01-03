@@ -13,7 +13,7 @@ const createTableData = async () => {
 
       tr.innerHTML = `
   <td>${user.id}</td>
-     <td class=Id">${user._id}</td>
+     <td class="id">${user._id}</td>
   <td>${user.firstname} ${user.lastname}</td>
   <td>${user.email}</td>
   <td>${user.role}</td>

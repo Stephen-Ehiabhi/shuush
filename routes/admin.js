@@ -130,11 +130,11 @@ const { email,password } = req.body;
 try {
    //check if admin exists
   const admin = await Admin.findOne({email});
-  if (!admin) return res.status(400).json({error: "Incorrect Password or Email"});
+  if (!admin) return res.status(400).json({"error": "Incorrect Password or Email"});
 
   //check password correct
   const passwordIsCorrect = await bcrypt.compare(password, admin.password);
-  if (!passwordIsCorrect) return res.status(400).json({ error: "Incorrect password or Email" });
+  if (!passwordIsCorrect) return res.status(400).json({ "error": "Incorrect password or Email" });
 
   const maxAge = 3 * 24 * 60 * 60;
 
@@ -143,12 +143,14 @@ try {
 
   //pass it to a cookie
   res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 } )
-  
+ 
+  res.status(200).json({ "sucess": "Admin Signed in" })
+
   res.redirect('/admin/dashboard')
 
 } catch (err) {
   // const errors =  handleErrors(err)
-  res.status(400).json({ "error": err })
+  res.status(404).json({ "error": err })
 }
 });
 

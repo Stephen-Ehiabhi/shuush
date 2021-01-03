@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
   font-family: Mulish;
 }
 
@@ -13,58 +14,63 @@ body {
   display: flex;
   overflow: hidden;
 }
-.data-div div {
-    width: auto;
-    height: 100vh;
-    background: #31326f;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 .main-div-one {
-  width: auto;
+  width: 288px;
   height: 100vh;
   background: #31326f;
-  color: white;
+  /* color: white; */
   display: flex;
+  margin: 0;
   flex-direction: column;
+  color: #ffffff;
   align-items: center;
 }
 
 .logo {
   width: 5rem;
   height: auto;
-  display: flex;
-  justify-content: center;
   padding-top: 2rem;
 }
 .nav-div {
   display: flex;
-  text-align: left;
+  /* text-align: left; */
 }
 ul {
   display: flex;
   height: 15rem;
   flex-direction: column;
   justify-content: space-between;
+  align-items: left;
+  width: 100%;
+
   align-content: left;
-  padding-top: 60px;
+  padding-top: 80px;
 }
-.nav-div li a {
-  display: flex;
-  height: 2.8rem;
-  width: 300px;
-  padding-top: 16px;
-  justify-content: space-around;
+.nav-div ul li {
+  height: 53px;
+  width: 100%;
+  margin-bottom: 20px;
+  /* padding: 5px 30px 13px 45px; */
+  /* color: #ffffff; */
+  /* background-color: #ffffff; */
+}
+/* .nav-div ul li:hover {
+  background-color: #ffffff;
+  color: #31326f;
+} */
+.nav-div ul li a {
+  /* padding-top: 32px; */
+  /* justify-content: space-around; */
   letter-spacing: 1px;
   font-family: Mulish;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  line-height: 16px;
-
   color: #ffffff;
+  padding: 10px 40px 10px 40px;
+  width: 100%;
+  line-height: 16px;
+  text-align: left;
 }
 button {
   border: none;
@@ -79,12 +85,15 @@ button {
   color: #ffffff;
   background: #31326f;
 }
-li a:hover {
-  background-color: white;
+.nav-div ul li a:hover {
   color: #31326f;
-  text-align: center;
-  padding-top: 16px;
+  background-color: #ffffff;
+  /* 
+  padding:10px 40px 10px 40px; */
+  /* height: 48px;
+  width: 228px; */
 }
+
 .logout {
   position: relative;
   bottom: -22rem;
@@ -149,19 +158,66 @@ nav {
 
   /* padding-left: 12px; */
 }
-
+.data-cont {
+  /* display:flex;
+  /* justify-content: center; 
+  align-items: center; */
+}
 .data-div {
   width: 100%;
-  height:100%;
+  height: 100%;
   background-color: white;
-  /* margin-top: 1.7rem; */
-
+  margin-left: 40px;
+  margin-top: 50px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-gap: 60px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  /* grid-template-rows: 1fr 1fr; */
+  /* grid-gap: 30px; */
 }
-
+.data-div div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 228.64px;
+  height: 113.68px;
+  background: #ededf7;
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 100%;
+  /* identical to box height, or 32px */
+ 
+  text-align: left;
+  color: #31326f;
+}
+.data-div div h1{
+  padding-right: 15px;
+}
+.v{
+  color: #FD4343;
+}
+h3{
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 120%;
+  /* or 22px */
+  width: 99.27px;
+  color: #FD4343;
+  padding-left:15px;
+  border-left: 1px solid #FD4343;
+}
+.data-div div p {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 120%;
+  /* or 22px */
+  width: 99.27px;
+  color: #31326f;
+  padding-left:15px;
+  border-left: 1px solid #31326F;
+}
 .topic {
   font-weight: 500;
   font-size: 17px;

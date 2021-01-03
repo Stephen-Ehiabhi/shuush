@@ -20,6 +20,7 @@ fetchedusers.forEach(users => {
   <td>${users.date_of_report}</td>
   <td>${users.age_of_the_victim} years old</td>
   <td>${users.case_status}</td>
+  <td>${users.victims_story}</td>
   `
   table.appendChild(tr)                 
 });

@@ -30,9 +30,9 @@ function page() {
     const volunteerContainer = document.querySelector(".volunteer-container");
 
     v.addEventListener("click", () => {
-      body.style.overflow = "hidden",
-        volunteerContainer.style.display = "block";
-        volunteerContainer.style.display = "flex"
+      (body.style.overflow = "hidden"),
+        (volunteerContainer.style.display = "block");
+      volunteerContainer.style.display = "flex";
     });
   };
   openVolunteer();
@@ -99,18 +99,6 @@ form.addEventListener("submit", async (e) => {
     gender: document.querySelector("#gender").value,
   };
 
-  //console.log(formData);
-
-  // form validation
-  // if (phone_number !== Number) {
-  //    const error = "Phone Number must be a number"
-  //   return errors.value = error
-  // }
-  // if(firstname <= 4)
-  //    const error = "Names must be more than fout letters"
-  //    return errors.value = error
-  // }
-
   try {
     const newFormData = await fetch("/volunteer/register", {
       method: "POST",
@@ -122,7 +110,7 @@ form.addEventListener("submit", async (e) => {
 
     const fetchedPost = await newFormData.json();
 
-    console.log(fetchedPost);
+    // console.log(fetchedPost);
     //   throw the errors to the frontend
     errors.textContent = fetchedPost.error;
     success.textContent = fetchedPost.success;

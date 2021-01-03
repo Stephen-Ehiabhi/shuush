@@ -35,8 +35,6 @@ const volunteerSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-    trim: true,
-    lowercase: true,
     unique: true,
     required: true,
   },

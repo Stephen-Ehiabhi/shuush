@@ -11,10 +11,9 @@ const createTableData = async () => {
       const td = document.createElement("td");
 
       tr.innerHTML = `
-  <td>01</td>
-     <td class=Id">#2293553</td>
-  <td>${user.firstname} ${user.lastname}</td>
-  <td>${user.email}</td>
+  <td class="id">${user._id}</td>
+  <td class="full">${user.firstname} ${user.lastname}</td>
+  <td class="email">${user.email}</td>
   <td>${user.phone_number}</td>
   <td>${user.volunteer_as}</td>
   <td>${user.occupation}</td>
