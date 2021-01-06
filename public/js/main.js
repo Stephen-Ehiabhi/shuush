@@ -30,8 +30,8 @@ function page() {
     const volunteerContainer = document.querySelector(".volunteer-container");
 
     v.addEventListener("click", () => {
-      (body.style.overflow = "hidden"),
-        (volunteerContainer.style.display = "block");
+      body.style.overflow = "hidden",
+      volunteerContainer.style.display = "block";
       volunteerContainer.style.display = "flex";
     });
   };

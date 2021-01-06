@@ -18,5 +18,3 @@ var c_f = new cf.ConversationalForm({
     document.getElementById("report-form").submit();
   },
 });
-
-// window.conversationalForm.addRobotChatResponse("Alright, you are done.");

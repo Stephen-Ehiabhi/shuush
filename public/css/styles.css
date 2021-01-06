@@ -11,10 +11,6 @@
   scroll-snap-type: y mandatory;
 }
 
-body {
-  background: rgb(139, 165, 152);
-}
-
 .errors {
   color: red;
   height: auto;
@@ -106,7 +102,8 @@ ul li {
 
 .volunteer-container {
   display: none;
-  display: flex;
+ 
+  z-index: 5;
   /* justify-content: center;
     align-content: center; */
 }
@@ -119,7 +116,7 @@ ul li {
   position: fixed;
   top: 0px;
   /* display: none; */
-  z-index: 5;
+  z-index: 4;
   overflow-y: scroll;
   overflow-x: hidden;
   /* display: flex; */
@@ -632,7 +629,9 @@ span {
     /* padding-top: 10px; */
     padding: 2px 32px;
   }
-
+.volunteer-container{
+  display: none;
+}
   .section-two-container h1,
   .section-three div h1,
   .section-four div h1,
@@ -2158,8 +2157,8 @@ span {
     height: auto;
     width: 30%;
     /* z-index: 1; */
-    /* overflow-y: none;
-       display: none; */
+     overflow-y: none;
+      /* display: none; */
     margin-top: 30px;
     /* left:38%; */
     /* margin:80px 50% ;

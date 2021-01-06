@@ -1,4 +1,3 @@
-
 // form element
 const form = document.querySelector("#form");
 
@@ -24,14 +23,12 @@ form.addEventListener("submit", async (e) => {
     });
 
     const fetchedPost = await newFormData.json();
-    console.log(fetchedPost.success)
 
     //   throw the errors to the frontend
     errors.textContent = fetchedPost.error;
     success.textContent = fetchedPost.success;
-   
   } catch (error) {
     console.log(error);
   }
   location.assign("/admin/dashboard");
-})
+});

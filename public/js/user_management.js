@@ -6,7 +6,6 @@ const createTableData = async () => {
     const users = await fetch("/admin/users");
     const fetchedUsers = await users.json();
 
-     console.log(fetchedUsers)
     fetchedUsers.forEach((user) => {
       const tr = document.createElement("tr");
       const td = document.createElement("td");

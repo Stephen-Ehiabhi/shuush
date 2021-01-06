@@ -120,9 +120,9 @@ router.delete('/:id',isAdmin,async (req,res) => {
  try {
       //get all the reports in the db
       const getReportCount = await Reports.countDocuments()
-      return res.json(getReportCount)                                             
+      return res.status(200).json(getReportCount)                                             
    } catch (error) {
-      res.status(404).json(`There was an error returning the DB ${error}`)                                                   
+    res.status(404).json({ error: `There was an error returning the DB ${error}` })                                                   
    }
    
  
@@ -130,14 +130,27 @@ router.delete('/:id',isAdmin,async (req,res) => {
 
 
     //returns the amount of pending reported cases
-   //  router.get('/total_pending',isAdmin,async (req,res) => {
-   //    try {
-   //         //get all the reports in the db
-   //         const getReportCount = await Reports.countDocuments({case_status: "pending"})
-   //         return res.json(getReportCount)                                             
-   //      } catch (error) {
-   //         res.status(404).json(`There was an error returning the DB`)                                                   
-   //      } 
-   // })    
+    router.get('/total_pending',isAdmin,async (req,res) => {
+      try {
+           //get all the reports in the db
+           const getReportCount = await Reports.countDocuments({case_status: "pending"})
+           return res.status(200).json(getReportCount)                                             
+        } catch (error) {
+          res.status(404).json({ error: `There was an error returning the DB` })                                                   
+        } 
+    })  
+   
+
+    //returns the amount of pending reported cases
+    router.get('/total_responded',isAdmin,async (req,res) => {
+      try {
+           //get all the reports in the db
+           const getReportCount = await Reports.countDocuments({case_status: "solved"})
+           return res.status(200).json(getReportCount)                                             
+        } catch (error) {
+          res.status(404).json({ error: `There was an error returning the DB` })                                                   
+        } 
+   })
+
 
 module.exports = router

@@ -48,7 +48,7 @@ const reportedcasesSchema = new mongoose.Schema({
     case_status:{
         type: String,
         default: "pending",
-        enum: ["pending","in-progress","done"]
+        enum: ["pending","in-progress","solved"]
     }
 });
 

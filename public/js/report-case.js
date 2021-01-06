@@ -1,17 +1,16 @@
-const table = document.querySelector("table")
-
+const table = document.querySelector("table");
 
 const createTableData = async () => {
   try {
     //fetch the users details route end-point
-const users = await fetch("/report/cases")
-const fetchedusers = await users.json();
+    const users = await fetch("/report/cases");
+    const fetchedusers = await users.json();
 
-// console.log(fetchedusers) 
-fetchedusers.forEach(users => {
-  const tr = document.createElement("tr")
+    // console.log(fetchedusers)
+    fetchedusers.forEach((users) => {
+      const tr = document.createElement("tr");
 
-  tr.innerHTML = `
+      tr.innerHTML = `
   <td>001</td>
   <td class=Id">${users._id}</td>
   <td>${users.anonymous_name}</td>
@@ -21,12 +20,15 @@ fetchedusers.forEach(users => {
   <td>${users.age_of_the_victim} years old</td>
   <td>${users.case_status}</td>
   <td>${users.victims_story}</td>
-  `
-  table.appendChild(tr)                 
-});
+  `;
+      table.appendChild(tr);
+     
+    });
   } catch (error) {
     console.log(error);
   }
-}
+};
 
-createTableData()
+createTableData();
+
+
