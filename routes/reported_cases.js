@@ -56,7 +56,8 @@ router.post('/', async (req,res)=>{
 
     try {
            const latestReport = await newReports.save()
-               
+      // res.status(200).json(`New report saved!`) 
+      res.redirect("/")
     } catch (error) {
          res.status(404).json(`There was an error saving a new report ${error}`)                  
     }
