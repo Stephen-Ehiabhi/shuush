@@ -24,8 +24,8 @@ router.get("/login", (req, res) => {
   res.sendFile(path.join(__dirname, "../public", "login.html"));
 });
 
-//get routes to load the login page
-router.get("/register", isAdmin, (req, res) => {
+//get routes to load the register page
+router.get("/register", (req, res) => {
   res.sendFile(path.join(__dirname, "../public", "a-register.html"));
 });
 

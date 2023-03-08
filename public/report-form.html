@@ -1,151 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shuush Chatbot</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/report-form.css">
-  <link rel="icon" href="Group 3.png" type="image/png">
-</head>
-<body>
-           <div class="container">
- <!-- report a case form -->
- <div id="report-case" class="report-case">
-  <datalist id="gender">
-    <option value="Male">
-    <option value="Female">
-  </datalist>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shuush Chatbot</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/report-form.css" />
+    <link rel="icon" href="Group 3.png" type="image/png" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- report a case form -->
+      <div id="report-case" class="report-case">
+        <datalist id="gender">
+          <option value="Male"></option>
+          <option value="Female"></option>
+        </datalist>
 
-  <datalist id="reported_for">
-    <option value="For Myself">
-    <option value="For Someone else">
-  </datalist>
-  <datalist id="abusers_occupation">
-    <option value="Staff">
-    <option value="Student">
-      <option value="others">
-  </datalist>
-  <form action="/report" method="POST" id="report-form" cf-form...>
-    <div class="report-header">
-      <h1>Shuush  <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="4.97235" cy="4.99994" r="4.02777" fill="#A8DDA8"/>
-        </svg>
-      </h1>
-      <a href="/">
-                       <svg class="cancel-report" width="22" height="22" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2.64258 1.61255L24.8129 25.3906" stroke="white" stroke-width="2"/>
-        <path d="M2.23389 24.9958L25.2221 2.00764" stroke="white" stroke-width="2"/>
-        </svg> 
-</a>
-                 
-    </div>
-  
-   
+        <datalist id="reported_for">
+          <option value="For Myself"></option>
+          <option value="For Someone else"></option>
+        </datalist>
 
+        <datalist id="abusers_occupation">
+          <option value="Staff"></option>
+          <option value="Student"></option>
+          <option value="others"></option>
+        </datalist>
 
+        <form action="/report" method="POST" id="report-form" cf-form...>
+          <div class="report-header">
+            <h1>
+              Shuush
+              <svg
+                width="9"
+                height="10"
+                viewBox="0 0 9 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="4.97235" cy="4.99994" r="4.02777" fill="#A8DDA8" />
+              </svg>
+            </h1>
+            <a href="/">
+              <svg
+                class="cancel-report"
+                width="22"
+                height="22"
+                viewBox="0 0 27 27"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2.64258 1.61255L24.8129 25.3906"
+                  stroke="white"
+                  stroke-width="2"
+                />
+                <path
+                  d="M2.23389 24.9958L25.2221 2.00764"
+                  stroke="white"
+                  stroke-width="2"
+                />
+              </svg>
+            </a>
+          </div>
 
+          <!-- robot text -->
+          <cf-robot-message
+            cf-questions="Hi, Welcome to Shuush ❤. Shuush helps students anonymously report cases of Sexual Abuse on Campuses. Our team is dedicated to helping you get all the support you need."
+          ></cf-robot-message>
 
+          <input
+            type="text"
+            name="anonymous_name"
+            cf-questions="To get started, Please type your Name?"
+            required
+          />
+          <!-- robot text -->
+          <cf-robot-message
+            cf-questions="Nice to meet you {anonymous_name}!😊"
+          ></cf-robot-message>
+          <input
+            type="text"
+            name="reported_for"
+            list="reported_for"
+            cf-questions="So {anonymous_name}, are you reporting this for yourself or on behalf of someone else?"
+            required
+          />
+          <input
+            type="text"
+            name="the_school_case_happened"
+            cf-questions="What's the name of the School the incident happened??"
+            required
+          />
 
+          <input
+            type="text"
+            name="gender_of_the_victim"
+            list="gender"
+            cf-questions="What's your gender? if you're reporting for someone else, is the victim Male of female?"
+            required
+          />
+          <input
+            type="text"
+            name="age_of_the_victim"
+            cf-questions="How old are you please? if you're reporting for someone else write the persons age"
+            required
+          />
 
-      <!-- robot text -->
-      <cf-robot-message cf-questions="Hi, Welcome to Shuush ❤. Shuush helps students anonymously report cases of Sexual Abuse on Campuses. Our team is dedicated to helping you get all the support you need."></cf-robot-message>
-
-      <input type="text" name="anonymous_name"
-      cf-questions="To get started, Please type your Name?" required />
-<!-- robot text -->
-<cf-robot-message cf-questions="Nice to meet you {anonymous_name}!😊"></cf-robot-message>
-      <input type="text" name="reported_for" list="reported_for"
-        cf-questions="So {anonymous_name}, are you reporting this for yourself or on behalf of someone else?" required />
-      <input type="text" name="the_school_case_happened"
-        cf-questions="What's the name of the School the incident happened??" required />
-         
-        
-        
-        <input type="text" name="gender_of_the_victim" list="gender" cf-questions="What's your gender? if you're reporting for someone else, is the victim Male of female?" required />
-      <input type="text" name="age_of_the_victim" cf-questions="How old are you please? if you're reporting for someone else write the persons age" required />
-      
-      <!-- conditional for abusers name -->
-<fieldset  cf-questions="Do you know the abusers name? It's alright if you don't.">
-  <label for="abusers-name-yes">Yes,i do.
-                <input type="radio" name="cfc-abusers-name" id="abusers-name-yes" value="yes">
+          <!-- conditional for abusers name -->
+          <fieldset
+            cf-questions="Do you know the abusers name? It's alright if you don't."
+          >
+            <label for="abusers-name-yes"
+              >Yes,i do.
+              <input
+                type="radio"
+                name="cfc-abusers-name"
+                id="abusers-name-yes"
+                value="yes"
+              />
             </label>
 
-  <label for="abusers-name-no">No i don't.
-                <input type="radio" name="cfc-abusers-name" id="abusers-name-no" value="no">
+            <label for="abusers-name-no"
+              >No i don't.
+              <input
+                type="radio"
+                name="cfc-abusers-name"
+                id="abusers-name-no"
+                value="no"
+              />
             </label>
-</fieldset>
+          </fieldset>
 
+          <input
+            type="text"
+            name="abusers_name"
+            cf-questions="please type in the abusers Fullname."
+            cf-conditional-cfc-abusers-name="yes"
+          />
 
-      <input type="text" name="abusers_name" cf-questions="please type in the abusers Fullname." cf-conditional-cfc-abusers-name="yes"/>
-     
-      <input type="text" name="gender_of_the_abuser" list="gender" cf-questions="What's the Abuser's Gender?"
-      cf-conditional-cfc-abusers-name="no"/>
+          <input
+            type="text"
+            name="gender_of_the_abuser"
+            list="gender"
+            cf-questions="What's the Abuser's Gender?"
+            cf-conditional-cfc-abusers-name="no"
+          />
 
-      
-      <input type="text" name="abusers_occupation" list="abusers_occupation"
-        cf-questions="What role does the Abuser have in the school?" required />
-      
-        <input type="text" name="abusers_faculty" cf-questions="What Faculty is the abuser in?"
-        required />
+          <input
+            type="text"
+            name="abusers_occupation"
+            list="abusers_occupation"
+            cf-questions="What role does the Abuser have in the school?"
+            required
+          />
 
-        <input type="text" name="abusers_department" cf-questions="What department are they in?"
-        required />
-     
- <!-- conditional for submitting the evidence -->
- <fieldset cf-questions="Do you still remember when it happened? The Date?">
-  <label for="date-yes">Yes i do.
-        <input type="radio" name="cfc-date" id="date-yes" value="yes">
-  </label>
+          <input
+            type="text"
+            name="abusers_faculty"
+            cf-questions="What Faculty is the abuser in?"
+            required
+          />
 
-  <label for="date-no">No i don't.
-        <input type="radio" name="cfc-date" id="date-no" value="no">
-  </label>
-</fieldset>
+          <input
+            type="text"
+            name="abusers_department"
+            cf-questions="What department are they in?"
+            required
+          />
 
-        <input type="text" name="date_victim_was_assaulted"
-        cf-questions="When was it then?" cf-conditional-cfc-date="yes"/>
-      
-        <textarea name="victims_story" rows="3" cf-questions="Can you describe what happened in a few sentences?"
-        cf-conditional-cfc-date="no" required></textarea>
+          <!-- conditional for submitting the evidence -->
+          <fieldset
+            cf-questions="Do you still remember when it happened? The Date?"
+          >
+            <label for="date-yes"
+              >Yes i do.
+              <input type="radio" name="cfc-date" id="date-yes" value="yes" />
+            </label>
 
-        <!-- conditional for submitting the evidence -->
-        <fieldset cf-questions="Do you have any media evidence you can send? it's perfectly fine if you don't.">
-          <label for="intro-yes">Yes i do.
-                <input type="radio" name="cfc-intro" id="intro-yes" value="yes">
-          </label>
-      
-          <label for="intro-no">No i don't.
-                <input type="radio" name="cfc-intro" id="intro-no" value="no">
-          </label>
-        </fieldset>
+            <label for="date-no"
+              >No i don't.
+              <input type="radio" name="cfc-date" id="date-no" value="no" />
+            </label>
+          </fieldset>
 
-      <input type="file" name="victims_case_evidence" cf-questions="Please attach the evidence in the chat." cf-conditional-cfc-intro="yes"/>
-      
+          <input
+            type="text"
+            name="date_victim_was_assaulted"
+            cf-questions="When was it then?"
+            cf-conditional-cfc-date="yes"
+          />
 
-<!-- conditional for counsellor connection -->
-<fieldset  cf-questions="Would you be willing to have a member of our team follow up for more details? This would be strictly confidential."  cf-conditional-cfc-intro="no">
-          <label for="intro-counsellor-yes">Yes, i'd love to.
-                <input type="radio" name="cfc-intro-coun" id="intro-counsellor-yes" value="yes">
-          </label>
-      
-          <label for="intro-counsellor-no">No Thanks..
-                 <input type="radio" name="cfc-intro-coun" id="intro-counsellor-no" value="no">
-          </label>
-</fieldset>
+          <textarea
+            name="victims_story"
+            rows="3"
+            cf-questions="Can you describe what happened in a few sentences?"
+            cf-conditional-cfc-date="no"
+            required
+          ></textarea>
 
+          <!-- conditional for submitting the evidence -->
+          <fieldset
+            cf-questions="Do you have any media evidence you can send? it's perfectly fine if you don't."
+          >
+            <label for="intro-yes"
+              >Yes i do.
+              <input type="radio" name="cfc-intro" id="intro-yes" value="yes" />
+            </label>
 
+            <label for="intro-no"
+              >No i don't.
+              <input type="radio" name="cfc-intro" id="intro-no" value="no" />
+            </label>
+          </fieldset>
 
-      <input type="email" name="email" cf-questions="Great! Please type in your correct and currently-in-use email."
-      cf-conditional-cfc-intro-coun="yes" required/>
+          <input
+            type="file"
+            name="victims_case_evidence"
+            cf-questions="Please attach the evidence in the chat."
+            cf-conditional-cfc-intro="yes"
+          />
 
+          <!-- conditional for counsellor connection -->
+          <fieldset
+            cf-questions="Would you be willing to have a member of our team follow up for more details? This would be strictly confidential."
+            cf-conditional-cfc-intro="no"
+          >
+            <label for="intro-counsellor-yes"
+              >Yes, i'd love to.
+              <input
+                type="radio"
+                name="cfc-intro-coun"
+                id="intro-counsellor-yes"
+                value="yes"
+              />
+            </label>
 
- <!-- robot text -->
- <cf-robot-message cf-conditional-cfc-intro-coun="no" cf-questions="Alright. Your report has been submitted we will get back to you shortly"></cf-robot-message>
+            <label for="intro-counsellor-no"
+              >No Thanks..
+              <input
+                type="radio"
+                name="cfc-intro-coun"
+                id="intro-counsellor-no"
+                value="no"
+              />
+            </label>
+          </fieldset>
 
-<!-- conditional for submitting the evidence -->
-<!-- <fieldset cf-questions="Thank you for Reporting. We'll get back to you shortly. Would you like to go back to the homepage?">
+          <input
+            type="email"
+            name="email"
+            cf-questions="Great! Please type in your correct and currently-in-use email."
+            cf-conditional-cfc-intro-coun="yes"
+            required
+          />
+
+          <!-- robot text -->
+          <cf-robot-message
+            cf-conditional-cfc-intro-coun="no"
+            cf-questions="Alright. Your report has been submitted we will get back to you shortly"
+          ></cf-robot-message>
+
+          <!-- conditional for submitting the evidence -->
+          <!-- <fieldset cf-questions="Thank you for Reporting. We'll get back to you shortly. Would you like to go back to the homepage?">
  <a href="/">
 <label for="intro-yes">Yes i do.
         <input type="radio" name="cfc-intro" id="intro-yes" value="yes">
@@ -158,16 +280,16 @@
   </label>
 </fieldset> -->
 
-      <button class="submit" type="submit"></button>
-
-    </form>
-    <div id="cf-context" role="cf-context" cf-context></div>
-
-  </div>
-
-</div>    
-
-</body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/space10-community/conversational-form@1.0.1/dist/conversational-form.min.js" crossorigin></script>
-<script src="../js/index.js"></script>
+          <button class="submit" type="submit"></button>
+        </form>
+        <div id="cf-context" role="cf-context" cf-context></div>
+      </div>
+    </div>
+  </body>
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/gh/space10-community/conversational-form@1.0.1/dist/conversational-form.min.js"
+    crossorigin
+  ></script>
+  <script src="../js/index.js"></script>
 </html>

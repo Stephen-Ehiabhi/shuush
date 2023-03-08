@@ -3,9 +3,8 @@ const getTotalReportCount = async () => {
   try {
     const stats = await fetch("/report/totalcount");
     const fetchedStats = await stats.json();
-  console.log(fetchedStats)
-   // const reportStats = document.querySelector(".r_r");
-   // reportStats.textContent = fetchedStats;
+    // const reportStats = document.querySelector(".r_r");
+    // reportStats.textContent = fetchedStats;
   } catch (error) {
     console.log(error);
   }
@@ -42,23 +41,21 @@ const getVolunteerCount = async () => {
 getVolunteerCount();
 
 const getPendingReportCount = async () => {
-    const stats = await fetch("/report/total_pending")
-    const fetchedStats = await stats.json()
+  const stats = await fetch("/report/total_pending");
+  const fetchedStats = await stats.json();
 
-  console.log(fetchedStats)
+  console.log(fetchedStats);
   const reportStats = document.querySelector(".r_u");
- // reportStats.textContent = fetchedStats;
- 
-}
-getPendingReportCount()
+  // reportStats.textContent = fetchedStats;
+};
+getPendingReportCount();
 
 const getRespondedReportCount = async () => {
-  const stats = await fetch("/report/total_responded")
-  const fetchedStats = await stats.json()
+  const stats = await fetch("/report/total_responded");
+  const fetchedStats = await stats.json();
 
-console.log(fetchedStats)
-const reportStats = document.querySelector(".r_r");
-//reportStats.textContent = fetchedStats;
-
-}
-getRespondedReportCount()
+  console.log(fetchedStats);
+  const reportStats = document.querySelector(".r_r");
+  //reportStats.textContent = fetchedStats;
+};
+getRespondedReportCount();
